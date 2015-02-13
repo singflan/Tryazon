@@ -14,6 +14,7 @@
 		6B748A2A1A8DAC54003F5124 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B748A291A8DAC54003F5124 /* Images.xcassets */; };
 		6B748A2D1A8DAC54003F5124 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B748A2B1A8DAC54003F5124 /* LaunchScreen.xib */; };
 		6B748A391A8DAC54003F5124 /* TryazonAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B748A381A8DAC54003F5124 /* TryazonAppTests.m */; };
+		6B748A431A8DACB6003F5124 /* Tryazon-logo2a.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B748A421A8DACB6003F5124 /* Tryazon-logo2a.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		6B748A321A8DAC54003F5124 /* TryazonAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TryazonAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B748A371A8DAC54003F5124 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B748A381A8DAC54003F5124 /* TryazonAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TryazonAppTests.m; sourceTree = "<group>"; };
+		6B748A421A8DACB6003F5124 /* Tryazon-logo2a.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tryazon-logo2a.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				6B748A231A8DAC54003F5124 /* ViewController.h */,
 				6B748A241A8DAC54003F5124 /* ViewController.m */,
 				6B748A261A8DAC54003F5124 /* Main.storyboard */,
+				6B748A421A8DACB6003F5124 /* Tryazon-logo2a.png */,
 				6B748A291A8DAC54003F5124 /* Images.xcassets */,
 				6B748A2B1A8DAC54003F5124 /* LaunchScreen.xib */,
 				6B748A1C1A8DAC54003F5124 /* Supporting Files */,
@@ -200,6 +203,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B748A281A8DAC54003F5124 /* Main.storyboard in Resources */,
+				6B748A431A8DACB6003F5124 /* Tryazon-logo2a.png in Resources */,
 				6B748A2D1A8DAC54003F5124 /* LaunchScreen.xib in Resources */,
 				6B748A2A1A8DAC54003F5124 /* Images.xcassets in Resources */,
 			);
