@@ -15,6 +15,7 @@
 		6B748A2D1A8DAC54003F5124 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B748A2B1A8DAC54003F5124 /* LaunchScreen.xib */; };
 		6B748A391A8DAC54003F5124 /* TryazonAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B748A381A8DAC54003F5124 /* TryazonAppTests.m */; };
 		6B748A431A8DACB6003F5124 /* Tryazon-logo2a.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B748A421A8DACB6003F5124 /* Tryazon-logo2a.png */; };
+		6BBCDAE31A8FCDB6001A8753 /* TASurveyControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BBCDAE21A8FCDB6001A8753 /* TASurveyControllerViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,8 @@
 		6B748A371A8DAC54003F5124 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B748A381A8DAC54003F5124 /* TryazonAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TryazonAppTests.m; sourceTree = "<group>"; };
 		6B748A421A8DACB6003F5124 /* Tryazon-logo2a.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tryazon-logo2a.png"; sourceTree = "<group>"; };
+		6BBCDAE11A8FCDB6001A8753 /* TASurveyControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TASurveyControllerViewController.h; sourceTree = "<group>"; };
+		6BBCDAE21A8FCDB6001A8753 /* TASurveyControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TASurveyControllerViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +91,8 @@
 				6B748A231A8DAC54003F5124 /* ViewController.h */,
 				6B748A241A8DAC54003F5124 /* ViewController.m */,
 				6B748A261A8DAC54003F5124 /* Main.storyboard */,
+				6BBCDAE11A8FCDB6001A8753 /* TASurveyControllerViewController.h */,
+				6BBCDAE21A8FCDB6001A8753 /* TASurveyControllerViewController.m */,
 				6B748A421A8DACB6003F5124 /* Tryazon-logo2a.png */,
 				6B748A291A8DAC54003F5124 /* Images.xcassets */,
 				6B748A2B1A8DAC54003F5124 /* LaunchScreen.xib */,
@@ -171,6 +176,12 @@
 				TargetAttributes = {
 					6B748A181A8DAC54003F5124 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = KM2A3K6DXB;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					6B748A311A8DAC54003F5124 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -226,6 +237,7 @@
 				6B748A251A8DAC54003F5124 /* ViewController.m in Sources */,
 				6B748A221A8DAC54003F5124 /* AppDelegate.m in Sources */,
 				6B748A1F1A8DAC54003F5124 /* main.m in Sources */,
+				6BBCDAE31A8FCDB6001A8753 /* TASurveyControllerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,9 +361,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = TryazonApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -359,9 +374,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = TryazonApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -418,6 +436,7 @@
 				6B748A3E1A8DAC54003F5124 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6B748A3F1A8DAC54003F5124 /* Build configuration list for PBXNativeTarget "TryazonAppTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +445,7 @@
 				6B748A411A8DAC54003F5124 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
