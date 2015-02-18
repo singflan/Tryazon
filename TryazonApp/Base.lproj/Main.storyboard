@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="kHZ-bc-rfl">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Title Page View Controller-->
@@ -79,6 +80,9 @@
                                 <state key="normal" title="Take Survey">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Jca-5m-DY1" kind="push" id="NXZ-Jt-4RJ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -89,6 +93,44 @@
             </objects>
             <point key="canvasLocation" x="582" y="1035"/>
         </scene>
+        <!--SurveyDetailViewController-->
+        <scene sceneID="iNx-gR-ELr">
+            <objects>
+                <viewController title="SurveyDetailViewController" id="Jca-5m-DY1" customClass="SurveyDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UNC-AM-xLa"/>
+                        <viewControllerLayoutGuide type="bottom" id="9CV-QJ-w2b"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XDh-5j-p4K">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZVM-mT-3BX">
+                                <rect key="frame" x="-25" y="-4" width="650" height="608"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ZVM-mT-3BX" firstAttribute="leading" secondItem="XDh-5j-p4K" secondAttribute="leadingMargin" id="2lu-rG-8sD"/>
+                            <constraint firstItem="ZVM-mT-3BX" firstAttribute="leading" secondItem="XDh-5j-p4K" secondAttribute="leadingMargin" id="Edw-JE-Kpz"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="ZVM-mT-3BX" secondAttribute="bottom" id="cmV-fw-n4Q"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="ZVM-mT-3BX" secondAttribute="bottom" id="gDJ-rq-fqo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ZVM-mT-3BX" secondAttribute="trailing" id="nr5-CS-Cou"/>
+                            <constraint firstItem="ZVM-mT-3BX" firstAttribute="top" secondItem="XDh-5j-p4K" secondAttribute="topMargin" id="pgG-4y-eVt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ZVM-mT-3BX" secondAttribute="trailing" id="vu2-7X-39z"/>
+                            <constraint firstItem="ZVM-mT-3BX" firstAttribute="top" secondItem="XDh-5j-p4K" secondAttribute="topMargin" id="whA-DU-dph"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="PNJ-oY-tvi"/>
+                    <connections>
+                        <outlet property="viewSurvey" destination="ZVM-mT-3BX" id="kaw-1P-Q3P"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0sY-sc-m6w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1249" y="1035"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="vHi-0g-VpI">
             <objects>
@@ -98,6 +140,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" id="2d5-fN-ErI">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.38767924639570206" green="0.84421141884812645" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="BqW-OH-p9G"/>
