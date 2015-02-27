@@ -22,8 +22,14 @@
     NSURL *url = [NSURL URLWithString:fullURL];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     [self.viewSurvey loadRequest:requestObj];
+    
+    
 }
 
+
+
+
+//add a way to add photos from device
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
