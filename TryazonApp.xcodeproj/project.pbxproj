@@ -14,29 +14,18 @@
 		6B748A2D1A8DAC54003F5124 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B748A2B1A8DAC54003F5124 /* LaunchScreen.xib */; };
 		6B748A391A8DAC54003F5124 /* TryazonAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B748A381A8DAC54003F5124 /* TryazonAppTests.m */; };
 		6B748A431A8DACB6003F5124 /* Tryazon-logo2a.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B748A421A8DACB6003F5124 /* Tryazon-logo2a.png */; };
+		6BAB848D1AA00C7F00ED3218 /* TALogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BAB848C1AA00C7F00ED3218 /* TALogInViewController.m */; };
+		6BAB84921AA2472700ED3218 /* TASignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BAB84911AA2472700ED3218 /* TASignUpViewController.m */; };
+		6BAB84941AA254F000ED3218 /* Tryazon-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BAB84931AA254F000ED3218 /* Tryazon-logo.png */; };
+		6BAB84961AA2550800ED3218 /* Tryazon-logo-blank.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BAB84951AA2550800ED3218 /* Tryazon-logo-blank.png */; };
+		6BAB849C1AA69C1A00ED3218 /* TAPartyHostInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BAB849B1AA69C1A00ED3218 /* TAPartyHostInfoViewController.m */; };
 		6BBCDAE31A8FCDB6001A8753 /* TASurveyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BBCDAE21A8FCDB6001A8753 /* TASurveyViewController.m */; };
 		6BC185881A942F8C00EADC9D /* SurveyDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BC185871A942F8C00EADC9D /* SurveyDetailViewController.m */; };
 		6BC185C21A9592A400EADC9D /* TAPartyInfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BC185C11A9592A400EADC9D /* TAPartyInfoTableViewController.m */; };
 		6BC552BB1A98ED6C00BB2FA4 /* UIColor+ExtraColorTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BC552BA1A98ED6C00BB2FA4 /* UIColor+ExtraColorTools.m */; };
 		6BC552BE1A9909F300BB2FA4 /* TATitlePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BC552BD1A9909F300BB2FA4 /* TATitlePageViewController.m */; };
 		6BC552C11A990DED00BB2FA4 /* TAUserController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BC552C01A990DED00BB2FA4 /* TAUserController.m */; };
-		6BC552C31A99177100BB2FA4 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BC552C21A99177100BB2FA4 /* ParseUI.framework */; };
-		6BC552CA1A99264300BB2FA4 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BC552C51A99264300BB2FA4 /* Bolts.framework */; };
-		6BC552CB1A99264400BB2FA4 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BC552C61A99264300BB2FA4 /* Parse.framework */; };
-		6BC552CC1A99264400BB2FA4 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BC552C71A99264300BB2FA4 /* ParseCrashReporting.framework */; };
-		6BC552CD1A99264400BB2FA4 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BC552C81A99264300BB2FA4 /* ParseFacebookUtils.framework */; };
-		6BC552CE1A99264400BB2FA4 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BC552C91A99264300BB2FA4 /* ParseUI.framework */; };
-		6BC552D01A996CB000BB2FA4 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BC552CF1A996CB000BB2FA4 /* AudioToolbox.framework */; };
-		6BC552D21A996CB800BB2FA4 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BC552D11A996CB800BB2FA4 /* CFNetwork.framework */; };
-		6BC552D41A996CC100BB2FA4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BC552D31A996CC100BB2FA4 /* CoreGraphics.framework */; };
-		6BC552D61A996CC800BB2FA4 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BC552D51A996CC800BB2FA4 /* CoreLocation.framework */; };
-		6BC552D81A996CD600BB2FA4 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BC552D71A996CD600BB2FA4 /* MobileCoreServices.framework */; };
-		6BC552DA1A996CDF00BB2FA4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BC552D91A996CDE00BB2FA4 /* QuartzCore.framework */; };
-		6BC552DC1A996CFA00BB2FA4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BC552DB1A996CFA00BB2FA4 /* Security.framework */; };
-		6BC552DE1A996D0200BB2FA4 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BC552DD1A996D0200BB2FA4 /* StoreKit.framework */; };
-		6BC552E01A996D1100BB2FA4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BC552DF1A996D1100BB2FA4 /* SystemConfiguration.framework */; };
-		6BC552E21A996D1900BB2FA4 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BC552E11A996D1900BB2FA4 /* libz.dylib */; };
-		6BC552E41A996D2900BB2FA4 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BC552E31A996D2900BB2FA4 /* libsqlite3.dylib */; };
+		89AD0170010246D1FA1F6833 /* libPods-TryazonApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE1EEB53CFD4FD38D89663BD /* libPods-TryazonApp.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		03E5E70203255536E6DD5076 /* Pods-TryazonApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TryazonApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-TryazonApp/Pods-TryazonApp.release.xcconfig"; sourceTree = "<group>"; };
+		3C7D92C43B1DC949FCF7BA26 /* Pods-TryazonApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TryazonApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TryazonApp/Pods-TryazonApp.debug.xcconfig"; sourceTree = "<group>"; };
 		6B748A191A8DAC54003F5124 /* TryazonApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TryazonApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B748A1D1A8DAC54003F5124 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B748A1E1A8DAC54003F5124 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -62,6 +53,14 @@
 		6B748A371A8DAC54003F5124 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B748A381A8DAC54003F5124 /* TryazonAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TryazonAppTests.m; sourceTree = "<group>"; };
 		6B748A421A8DACB6003F5124 /* Tryazon-logo2a.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tryazon-logo2a.png"; sourceTree = "<group>"; };
+		6BAB848B1AA00C7F00ED3218 /* TALogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TALogInViewController.h; sourceTree = "<group>"; };
+		6BAB848C1AA00C7F00ED3218 /* TALogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TALogInViewController.m; sourceTree = "<group>"; };
+		6BAB84901AA2472700ED3218 /* TASignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TASignUpViewController.h; sourceTree = "<group>"; };
+		6BAB84911AA2472700ED3218 /* TASignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TASignUpViewController.m; sourceTree = "<group>"; };
+		6BAB84931AA254F000ED3218 /* Tryazon-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Tryazon-logo.png"; path = "../../../Library/Containers/com.apple.mail/Data/Library/Mail Downloads/6745E820-D729-4EA4-B012-98C224734F55/Tryazon-logo.png"; sourceTree = "<group>"; };
+		6BAB84951AA2550800ED3218 /* Tryazon-logo-blank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Tryazon-logo-blank.png"; path = "../../../Library/Containers/com.apple.mail/Data/Library/Mail Downloads/22409DC3-1D10-4B26-A52F-17C6D05E2FB1/Tryazon-logo-blank.png"; sourceTree = "<group>"; };
+		6BAB849A1AA69C1A00ED3218 /* TAPartyHostInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAPartyHostInfoViewController.h; sourceTree = "<group>"; };
+		6BAB849B1AA69C1A00ED3218 /* TAPartyHostInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAPartyHostInfoViewController.m; sourceTree = "<group>"; };
 		6BBCDAE11A8FCDB6001A8753 /* TASurveyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TASurveyViewController.h; sourceTree = "<group>"; };
 		6BBCDAE21A8FCDB6001A8753 /* TASurveyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TASurveyViewController.m; sourceTree = "<group>"; };
 		6BC185861A942F8C00EADC9D /* SurveyDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SurveyDetailViewController.h; sourceTree = "<group>"; };
@@ -74,23 +73,9 @@
 		6BC552BD1A9909F300BB2FA4 /* TATitlePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TATitlePageViewController.m; sourceTree = "<group>"; };
 		6BC552BF1A990DED00BB2FA4 /* TAUserController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAUserController.h; sourceTree = "<group>"; };
 		6BC552C01A990DED00BB2FA4 /* TAUserController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAUserController.m; sourceTree = "<group>"; };
-		6BC552C21A99177100BB2FA4 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
-		6BC552C51A99264300BB2FA4 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		6BC552C61A99264300BB2FA4 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
-		6BC552C71A99264300BB2FA4 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
-		6BC552C81A99264300BB2FA4 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
-		6BC552C91A99264300BB2FA4 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
-		6BC552CF1A996CB000BB2FA4 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		6BC552D11A996CB800BB2FA4 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
-		6BC552D31A996CC100BB2FA4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		6BC552D51A996CC800BB2FA4 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		6BC552D71A996CD600BB2FA4 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		6BC552D91A996CDE00BB2FA4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		6BC552DB1A996CFA00BB2FA4 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		6BC552DD1A996D0200BB2FA4 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		6BC552DF1A996D1100BB2FA4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		6BC552E11A996D1900BB2FA4 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		6BC552E31A996D2900BB2FA4 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		DE1EEB53CFD4FD38D89663BD /* libPods-TryazonApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TryazonApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,23 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6BC552E41A996D2900BB2FA4 /* libsqlite3.dylib in Frameworks */,
-				6BC552E21A996D1900BB2FA4 /* libz.dylib in Frameworks */,
-				6BC552E01A996D1100BB2FA4 /* SystemConfiguration.framework in Frameworks */,
-				6BC552DE1A996D0200BB2FA4 /* StoreKit.framework in Frameworks */,
-				6BC552DC1A996CFA00BB2FA4 /* Security.framework in Frameworks */,
-				6BC552DA1A996CDF00BB2FA4 /* QuartzCore.framework in Frameworks */,
-				6BC552D81A996CD600BB2FA4 /* MobileCoreServices.framework in Frameworks */,
-				6BC552D61A996CC800BB2FA4 /* CoreLocation.framework in Frameworks */,
-				6BC552D41A996CC100BB2FA4 /* CoreGraphics.framework in Frameworks */,
-				6BC552D21A996CB800BB2FA4 /* CFNetwork.framework in Frameworks */,
-				6BC552D01A996CB000BB2FA4 /* AudioToolbox.framework in Frameworks */,
-				6BC552CE1A99264400BB2FA4 /* ParseUI.framework in Frameworks */,
-				6BC552C31A99177100BB2FA4 /* ParseUI.framework in Frameworks */,
-				6BC552CB1A99264400BB2FA4 /* Parse.framework in Frameworks */,
-				6BC552CA1A99264300BB2FA4 /* Bolts.framework in Frameworks */,
-				6BC552CD1A99264400BB2FA4 /* ParseFacebookUtils.framework in Frameworks */,
-				6BC552CC1A99264400BB2FA4 /* ParseCrashReporting.framework in Frameworks */,
+				89AD0170010246D1FA1F6833 /* libPods-TryazonApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,21 +103,12 @@
 				6B748A1B1A8DAC54003F5124 /* TryazonApp */,
 				6BC552E31A996D2900BB2FA4 /* libsqlite3.dylib */,
 				6BC552E11A996D1900BB2FA4 /* libz.dylib */,
-				6BC552DF1A996D1100BB2FA4 /* SystemConfiguration.framework */,
-				6BC552DD1A996D0200BB2FA4 /* StoreKit.framework */,
-				6BC552DB1A996CFA00BB2FA4 /* Security.framework */,
-				6BC552D91A996CDE00BB2FA4 /* QuartzCore.framework */,
-				6BC552D71A996CD600BB2FA4 /* MobileCoreServices.framework */,
-				6BC552D51A996CC800BB2FA4 /* CoreLocation.framework */,
-				6BC552D31A996CC100BB2FA4 /* CoreGraphics.framework */,
-				6BC552D11A996CB800BB2FA4 /* CFNetwork.framework */,
-				6BC552CF1A996CB000BB2FA4 /* AudioToolbox.framework */,
-				6BC552C41A99264300BB2FA4 /* parse-library-1.6.2 */,
-				6BC552C21A99177100BB2FA4 /* ParseUI.framework */,
 				6BC552B91A98ED6C00BB2FA4 /* UIColor+ExtraColorTools.h */,
 				6BC552BA1A98ED6C00BB2FA4 /* UIColor+ExtraColorTools.m */,
 				6B748A351A8DAC54003F5124 /* TryazonAppTests */,
 				6B748A1A1A8DAC54003F5124 /* Products */,
+				F9785CAA4107DE9F06AB3381 /* Pods */,
+				B6444CF74BE1D2887E928C8E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -169,6 +129,12 @@
 				6B748A261A8DAC54003F5124 /* Main.storyboard */,
 				6BC552BC1A9909F300BB2FA4 /* TATitlePageViewController.h */,
 				6BC552BD1A9909F300BB2FA4 /* TATitlePageViewController.m */,
+				6BAB848B1AA00C7F00ED3218 /* TALogInViewController.h */,
+				6BAB848C1AA00C7F00ED3218 /* TALogInViewController.m */,
+				6BAB84901AA2472700ED3218 /* TASignUpViewController.h */,
+				6BAB84911AA2472700ED3218 /* TASignUpViewController.m */,
+				6BAB849A1AA69C1A00ED3218 /* TAPartyHostInfoViewController.h */,
+				6BAB849B1AA69C1A00ED3218 /* TAPartyHostInfoViewController.m */,
 				6BC185C01A9592A400EADC9D /* TAPartyInfoTableViewController.h */,
 				6BC185C11A9592A400EADC9D /* TAPartyInfoTableViewController.m */,
 				6BBCDAE11A8FCDB6001A8753 /* TASurveyViewController.h */,
@@ -178,6 +144,8 @@
 				6BC552BF1A990DED00BB2FA4 /* TAUserController.h */,
 				6BC552C01A990DED00BB2FA4 /* TAUserController.m */,
 				6B748A421A8DACB6003F5124 /* Tryazon-logo2a.png */,
+				6BAB84931AA254F000ED3218 /* Tryazon-logo.png */,
+				6BAB84951AA2550800ED3218 /* Tryazon-logo-blank.png */,
 				6B748A291A8DAC54003F5124 /* Images.xcassets */,
 				6B748A2B1A8DAC54003F5124 /* LaunchScreen.xib */,
 				6B748A1C1A8DAC54003F5124 /* Supporting Files */,
@@ -211,16 +179,21 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		6BC552C41A99264300BB2FA4 /* parse-library-1.6.2 */ = {
+		B6444CF74BE1D2887E928C8E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6BC552C51A99264300BB2FA4 /* Bolts.framework */,
-				6BC552C61A99264300BB2FA4 /* Parse.framework */,
-				6BC552C71A99264300BB2FA4 /* ParseCrashReporting.framework */,
-				6BC552C81A99264300BB2FA4 /* ParseFacebookUtils.framework */,
-				6BC552C91A99264300BB2FA4 /* ParseUI.framework */,
+				DE1EEB53CFD4FD38D89663BD /* libPods-TryazonApp.a */,
 			);
-			path = "parse-library-1.6.2";
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F9785CAA4107DE9F06AB3381 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3C7D92C43B1DC949FCF7BA26 /* Pods-TryazonApp.debug.xcconfig */,
+				03E5E70203255536E6DD5076 /* Pods-TryazonApp.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,9 +203,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6B748A3C1A8DAC54003F5124 /* Build configuration list for PBXNativeTarget "TryazonApp" */;
 			buildPhases = (
+				A40041FAEF8337FD6D58B3EA /* Check Pods Manifest.lock */,
 				6B748A151A8DAC54003F5124 /* Sources */,
 				6B748A161A8DAC54003F5124 /* Frameworks */,
 				6B748A171A8DAC54003F5124 /* Resources */,
+				08859F57A0E379980014B44C /* Copy Pods Resources */,
+				6BAB848A1AA0061800ED3218 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -309,10 +285,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BAB84941AA254F000ED3218 /* Tryazon-logo.png in Resources */,
 				6B748A281A8DAC54003F5124 /* Main.storyboard in Resources */,
 				6B748A431A8DACB6003F5124 /* Tryazon-logo2a.png in Resources */,
 				6B748A2D1A8DAC54003F5124 /* LaunchScreen.xib in Resources */,
 				6B748A2A1A8DAC54003F5124 /* Images.xcassets in Resources */,
+				6BAB84961AA2550800ED3218 /* Tryazon-logo-blank.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,12 +303,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		08859F57A0E379980014B44C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TryazonApp/Pods-TryazonApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6BAB848A1AA0061800ED3218 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 1502064c72f42cda2a1e6bf318afe614eb8fb0d4 e8e24b8f3cf3dd7b41cd53bebbefed39f82a58fb210735af175f0c4154536ab6";
+		};
+		A40041FAEF8337FD6D58B3EA /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6B748A151A8DAC54003F5124 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				6BC552BE1A9909F300BB2FA4 /* TATitlePageViewController.m in Sources */,
+				6BAB849C1AA69C1A00ED3218 /* TAPartyHostInfoViewController.m in Sources */,
+				6BAB84921AA2472700ED3218 /* TASignUpViewController.m in Sources */,
 				6B748A221A8DAC54003F5124 /* AppDelegate.m in Sources */,
 				6BC185C21A9592A400EADC9D /* TAPartyInfoTableViewController.m in Sources */,
 				6BC552C11A990DED00BB2FA4 /* TAUserController.m in Sources */,
@@ -338,6 +364,7 @@
 				6BBCDAE31A8FCDB6001A8753 /* TASurveyViewController.m in Sources */,
 				6BC552BB1A98ED6C00BB2FA4 /* UIColor+ExtraColorTools.m in Sources */,
 				6BC185881A942F8C00EADC9D /* SurveyDetailViewController.m in Sources */,
+				6BAB848D1AA00C7F00ED3218 /* TALogInViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,6 +486,7 @@
 		};
 		6B748A3D1A8DAC54003F5124 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C7D92C43B1DC949FCF7BA26 /* Pods-TryazonApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Dustin Flanary (95H7J54Y36)";
@@ -477,6 +505,7 @@
 		};
 		6B748A3E1A8DAC54003F5124 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 03E5E70203255536E6DD5076 /* Pods-TryazonApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Dustin Flanary (95H7J54Y36)";

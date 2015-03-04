@@ -7,10 +7,12 @@
 //
 
 #import "TAUserController.h"
-#import <ParseUI/ParseUI.h>
 
 @implementation TAUserController
 
-
+PFUser *user = [PFUser currentUser];
+PFRelation *relation = [user relationForKey:@"parties"];
+[relation addObject:party];
+[user saveInBackground];
 
 @end

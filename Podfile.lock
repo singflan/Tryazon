@@ -1,0 +1,41 @@
+PODS:
+  - Analytics/Core-iOS (1.11.0):
+    - TRVSDictionaryWithCaseInsensitivity (= 0.0.2)
+  - Analytics/Flurry (1.11.0):
+    - Analytics/Core-iOS
+    - Analytics/Segmentio
+    - FlurrySDK (= 4.4.0)
+  - Analytics/Segmentio (1.11.0):
+    - Analytics/Core-iOS
+  - Bolts (1.1.3)
+  - Facebook-iOS-SDK (3.23.0):
+    - Bolts (~> 1.0)
+  - FlurrySDK (4.4.0):
+    - FlurrySDK/FlurrySDK (= 4.4.0)
+  - FlurrySDK/FlurrySDK (4.4.0)
+  - Parse (1.6.3):
+    - Bolts (~> 1.1)
+  - ParseFacebookUtils (1.6.3):
+    - Facebook-iOS-SDK (~> 3.20)
+    - Parse (~> 1.6.3)
+  - ParseUI (1.1.0):
+    - Parse (~> 1.6)
+    - ParseFacebookUtils (~> 1.6)
+  - TRVSDictionaryWithCaseInsensitivity (0.0.2)
+
+DEPENDENCIES:
+  - Analytics/Flurry
+  - Parse
+  - ParseUI
+
+SPEC CHECKSUMS:
+  Analytics: 57af1211d00ab8f6ccd655d2efa71c855a834011
+  Bolts: 3db0a875235e0c9042b013af13af0f00f79b102c
+  Facebook-iOS-SDK: 3d65f685348b789e46a9aacf92bfa85b60b63755
+  FlurrySDK: abaedafc350afa41b004236b67ae14f7d3748b68
+  Parse: f725f76ef200c5127420690fc6882e57c3813923
+  ParseFacebookUtils: bb14e63862f920cc3f3864b0e373d6771b765255
+  ParseUI: 00c4c39aab3944d88758b55416581650caa37f89
+  TRVSDictionaryWithCaseInsensitivity: a61daa8469fa079e05b694f6aad5441785c837d1
+
+COCOAPODS: 0.35.0

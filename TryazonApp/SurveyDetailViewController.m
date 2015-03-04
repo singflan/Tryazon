@@ -27,8 +27,6 @@
 }
 
 
-
-
 //add a way to add photos from device
 
 - (void)didReceiveMemoryWarning {

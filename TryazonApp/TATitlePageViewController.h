@@ -13,4 +13,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *currentUserLabel;
 @property (strong, nonatomic) IBOutlet UIButton *logOutButton;
 
+- (IBAction)logInPressed:(id)sender;
+//+ (void) logIn;
+
 @end

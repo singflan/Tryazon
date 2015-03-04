@@ -7,42 +7,71 @@
 //
 
 #import "TATitlePageViewController.h"
-#import <ParseUI/ParseUI.h>
+#import <Parse/Parse.h>
+#import "TALogInViewController.h"
+
+@interface TATitlePageViewController() <PFLogInViewControllerDelegate>
+
+
+@property(nonatomic, strong)PFUser *currentUser;
+
+@end
 
 @implementation TATitlePageViewController
+
 
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-//    PFUser *currentUser = [PFUser currentUser];
-//    if (!currentUser) {
-//        [self logIn];
-//    } else {
-//    
+//    if (![PFUser currentUser]) {
+//        [self performSegueWithIdentifier:@"logInSegue" sender:self];
 //    }
-
-//    self.view.backgroundColor = [UIColor randomColor];
-//    PFUser *currentUser = [PFUser currentUser];
-//    
-//
-}
-
--(void)logIn {
-        
-    PFLogInViewController *logInController = [[PFLogInViewController alloc] init];
-    logInController.delegate = self;
-    [self presentViewController:logInController animated:YES completion:nil];
+//    else
+//    {
+//       // NSLog(@"%@", currentUser.username)
+//    }
     
 }
+
+- (void)viewWillAppear:(BOOL)animated {
+    [self resetUserLabel];
+}
+
 
 - (IBAction)logInPressed:(id)sender {
     
-//    PFSignUpViewController *controller = [[PFSignUpViewController alloc] init];
-//    controller.delegate = self; //am I supposed to put this code inside a PFSignUpViewController that I create?
-//    [self presentViewController:controller animated:YES completion:nil];
-//
+    TALogInViewController *controller = [[TALogInViewController alloc] init];
+    controller.delegate = self;
+    [self presentViewController:controller animated:YES completion:nil];
+    
+    
+
+}
+
+-(void)resetUserLabel {
+    PFUser *currentUser = [PFUser currentUser];
+    if (currentUser) {
+        self.currentUserLabel.text = currentUser.username;
+    }
+    else {
+        self.currentUserLabel.text = @"No user logged in.";
+    }
+}
+
+- (IBAction)logOutButton:(id)sender {
+    
+    [PFUser logOut];
+    //PFUser *currentUser = [PFUser currentUser];
+    [self resetUserLabel];
+}
+
+-(void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user{
+    
+    [logInController dismissViewControllerAnimated:YES completion:^{
+        
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -50,24 +79,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-//- (void)myMethod {
-//    PFUser *user = [PFUser user];
-//    user.username = @"my name";
-//    user.password = @"my pass";
-//    user.email = @"email@example.com";
-//    
-//    // other fields can be set just like with PFObject
-//    user[@"phone"] = @"415-392-0202";
-//    
-//    [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-//        if (!error) {
-//            // Hooray! Let them use the app now.
-//        } else {
-//            NSString *errorString = [error userInfo][@"error"];
-//            // Show the errorString somewhere and let the user try again.
-//        }
-//    }];
-//}
 
 
 @end

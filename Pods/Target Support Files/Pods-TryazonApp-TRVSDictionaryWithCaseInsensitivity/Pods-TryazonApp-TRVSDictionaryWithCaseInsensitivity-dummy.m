@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_TryazonApp_TRVSDictionaryWithCaseInsensitivity : NSObject
+@end
+@implementation PodsDummy_Pods_TryazonApp_TRVSDictionaryWithCaseInsensitivity
+@end

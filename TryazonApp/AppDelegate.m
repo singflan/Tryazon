@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
 #import "TATitlePageViewController.h"
+#import <Analytics.h>
+
 
 
 @interface AppDelegate ()
@@ -45,7 +47,21 @@
     [application registerUserNotificationSettings:settings];
     [application registerForRemoteNotifications];
     
+//    PFUser *currentUser = [PFUser currentUser];
+//    if (currentUser) {
+//        
+//    } else {
+//       
+//    }
     
+//    [SEGAnalytics setupWithConfiguration:[SEGAnalyticsConfiguration configurationWithWriteKey:@"eDhrqkPU7ACB2a05rey2c9bAaTsuBZMg"]];
+//    
+//    [[SEGAnalytics sharedAnalytics] identify:@"pretend it's unique"
+//                                      traits:@{ @"name": @"Dustin Flanary",
+//                                                @"email": @"singflan@gmail.com" }];
+//    
+//    [[SEGAnalytics sharedAnalytics] track:@"Signed Up"
+//                               properties:@{ @"name": @"Dustin Flanary" }];
     
     return YES;
 }
