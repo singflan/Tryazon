@@ -5,32 +5,6 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--LogIn/SignUp View Controller-->
-        <scene sceneID="ghy-4m-fS2">
-            <objects>
-                <viewController title="LogIn/SignUp View Controller" id="VWi-CN-Y0m" customClass="TALogInViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ryj-JZ-OSQ"/>
-                        <viewControllerLayoutGuide type="bottom" id="oyN-aa-YrY"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="rvg-CT-oPc">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cookies" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xh2-Iu-yjy">
-                                <rect key="frame" x="240" y="121" width="63" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NDr-qW-Ve1" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="582" y="-982"/>
-        </scene>
         <!--Title Page View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -99,7 +73,6 @@
                         <outlet property="currentUserLabel" destination="Zcv-2I-Ohe" id="8YQ-ni-J3f"/>
                         <outlet property="logOutButton" destination="Zws-94-wF8" id="SME-7b-FoR"/>
                         <outlet property="signUpLogInButton" destination="btb-eP-INK" id="S49-ZO-lfy"/>
-                        <segue destination="VWi-CN-Y0m" kind="presentation" identifier="logInSegue" id="6fg-b4-URh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -221,7 +194,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JJj-Vz-Kxs">
-                                <rect key="frame" x="-37" y="-87" width="637" height="672"/>
+                                <rect key="frame" x="-37" y="-54" width="637" height="672"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
                         </subviews>
@@ -231,7 +204,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZDj-6u-gDK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1296" y="-528"/>
+            <point key="canvasLocation" x="1425" y="-620"/>
         </scene>
         <!--Party Prep Info NavController-->
         <scene sceneID="Zdi-q0-ubm">

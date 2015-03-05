@@ -11,4 +11,8 @@
 
 @interface TAUserController : NSObject
 
++ (TAUserController *)sharedInstance;
+
+- (NSString *)getSurveyURLForCurrentUser;
+
 @end

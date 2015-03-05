@@ -20,8 +20,8 @@
     // Do any additional setup after loading the view.
     
     
-    PFFile *partyPDF = anotherApplication[@"partyPDF"];
-    NSData *partyData = [partyPDF getData];
+//    PFFile *partyPDF = anotherApplication[@"partypdf"];
+//    NSData *partyData = [partyPDF getData];
 }
 
 - (void)didReceiveMemoryWarning {

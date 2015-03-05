@@ -10,9 +10,38 @@
 
 @implementation TAUserController
 
-PFUser *user = [PFUser currentUser];
-PFRelation *relation = [user relationForKey:@"parties"];
-[relation addObject:party];
-[user saveInBackground];
+
+
++ (TAUserController *)sharedInstance {
+    static TAUserController *sharedInstance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedInstance = [[TAUserController alloc] init];
+        
+    });
+    return sharedInstance;
+}
+
+
+- (NSString *)getSurveyURLForCurrentUser {
+    [[PFUser currentUser] fetchInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+    
+    }];
+    
+    PFUser *user = [PFUser currentUser];
+    [user fetch];
+    PFObject *party = user[@"partyhosting"];
+    NSString *partyURL = party[@"surveyurl"];
+    
+    return partyURL;
+}
+
+- (PFFile *)getPDFForCurrentUser {
+    PFUser *user = [PFUser currentUser];
+    PFObject *party = user[@"partyhosting"];
+    //PFFile *partyPDF = party[@"partypdf"];
+    
+    return nil;
+}
 
 @end
