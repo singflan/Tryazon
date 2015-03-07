@@ -17,7 +17,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    //self.view.backgroundColor = [UIColor cyanColor];
+    self.view.backgroundColor = [UIColor cyanColor];
+    
+    
+    self.signUpView.usernameField.placeholder = @"Email Address";
+    self.signUpView.passwordField.placeholder = @"Password or PIN (any number of characters or numbers)";
+    
     
     UIImageView *logoView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Tryazon-logo2a.png"]];
     self.signUpView.logo = logoView; // logo can be any UIView
@@ -26,6 +31,11 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+  //  self.signUpView.logInButton.frame = CGRectMake(...); // Set a different frame.
 }
 
 /*

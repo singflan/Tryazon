@@ -23,17 +23,34 @@
 }
 
 
-- (NSString *)getSurveyURLForCurrentUser {
+- (void)getSurveyURLForCurrentUsercallback:(void (^)(NSString *))callback{
     [[PFUser currentUser] fetchInBackgroundWithBlock:^(PFObject *object, NSError *error) {
-    
+        [[object objectForKey:@"partyhosting"] fetchInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+            if (!error){
+                NSString *partyURL = [object objectForKey:@"surveyurl"];
+                callback(partyURL);
+            }
+            else {
+                NSLog(@"You got an error retrieving the URL");
+            }
+        }];
+        
     }];
     
-    PFUser *user = [PFUser currentUser];
-    [user fetch];
-    PFObject *party = user[@"partyhosting"];
-    NSString *partyURL = party[@"surveyurl"];
+    //[[PFUser currentUser] fetchInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+        
+      //  PFUser *user = [PFUser currentUser];
     
-    return partyURL;
+        
+        
+        
+
+    //NSString *partyURL = party[@"surveyurl"];
+    //return self.partyURL;
+//    PFUser *user = [PFUser currentUser];
+//    [user fetch];
+    
+    
 }
 
 - (PFFile *)getPDFForCurrentUser {

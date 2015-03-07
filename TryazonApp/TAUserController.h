@@ -9,10 +9,12 @@
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
 
+
 @interface TAUserController : NSObject
 
 + (TAUserController *)sharedInstance;
 
-- (NSString *)getSurveyURLForCurrentUser;
+- (void)getSurveyURLForCurrentUsercallback:(void (^)(NSString *))callback;
+- (PFFile *)getPDFForCurrentUser;
 
 @end

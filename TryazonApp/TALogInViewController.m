@@ -20,8 +20,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //self.view.backgroundColor = [UIColor darkGrayColor];
-    self.logInView.usernameField.placeholder = @"username";
+    self.view.backgroundColor = [UIColor darkGrayColor];
+    self.logInView.usernameField.placeholder = @"Email Address";
+    self.logInView.passwordField.placeholder = @"Password/PIN";
+    
     
     UIImageView *logoView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Tryazon-logo2a.png"]];
     self.logInView.logo = logoView; // logo can be any UIView
@@ -29,7 +31,16 @@
     self.signUpController = [[TASignUpViewController alloc] init];
     self.signUpController.delegate = self;
 
+    self.signUpController.fields = (PFSignUpFieldsUsernameAndPassword
+                               | PFSignUpFieldsSignUpButton
+                               | PFSignUpFieldsDismissButton);
 }
+
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    //self.logInView.logInButton.frame = CGRectMake(...); // Set a different frame.
+}
+
 //- (void)logInViewController:(TALogInViewController *)controller
 //didLogInUser:(PFUser *)user {
 //    [self dismissViewControllerAnimated:YES completion:nil];
