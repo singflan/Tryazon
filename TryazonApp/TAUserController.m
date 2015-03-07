@@ -10,8 +10,6 @@
 
 @implementation TAUserController
 
-
-
 + (TAUserController *)sharedInstance {
     static TAUserController *sharedInstance = nil;
     static dispatch_once_t onceToken;
@@ -22,8 +20,7 @@
     return sharedInstance;
 }
 
-
-- (void)getSurveyURLForCurrentUsercallback:(void (^)(NSString *))callback{
+- (void)getSurveyURLForCurrentUserCallback:(void (^)(NSString *))callback {
     [[PFUser currentUser] fetchInBackgroundWithBlock:^(PFObject *object, NSError *error) {
         [[object objectForKey:@"partyhosting"] fetchInBackgroundWithBlock:^(PFObject *object, NSError *error) {
             if (!error){
@@ -36,29 +33,21 @@
         }];
         
     }];
-    
-    //[[PFUser currentUser] fetchInBackgroundWithBlock:^(PFObject *object, NSError *error) {
-        
-      //  PFUser *user = [PFUser currentUser];
-    
-        
-        
-        
-
-    //NSString *partyURL = party[@"surveyurl"];
-    //return self.partyURL;
-//    PFUser *user = [PFUser currentUser];
-//    [user fetch];
-    
-    
 }
 
-- (PFFile *)getPDFForCurrentUser {
-    PFUser *user = [PFUser currentUser];
-    PFObject *party = user[@"partyhosting"];
-    //PFFile *partyPDF = party[@"partypdf"];
-    
-    return nil;
+- (void)getPDFForCurrentUserCallback:(void (^)(PFFile *))callback {
+    [[PFUser currentUser] fetchInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+        [[object objectForKey:@"partyhosting"] fetchInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+            if (!error){
+                PFFile *partyPDF = [object objectForKey:@"partypdf"];
+                callback(partyPDF);
+            }
+            else {
+                NSLog(@"You got an error retrieving the pdf file");
+            }
+        }];
+        
+    }];
 }
 
 @end

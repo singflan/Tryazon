@@ -14,7 +14,7 @@
 
 + (TAUserController *)sharedInstance;
 
-- (void)getSurveyURLForCurrentUsercallback:(void (^)(NSString *))callback;
-- (PFFile *)getPDFForCurrentUser;
+- (void)getSurveyURLForCurrentUserCallback:(void (^)(NSString *))callback;
+- (void)getPDFForCurrentUserCallback:(void (^)(PFFile *))callback;
 
 @end

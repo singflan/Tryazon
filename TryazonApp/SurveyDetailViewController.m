@@ -21,36 +21,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [[TAUserController sharedInstance] getSurveyURLForCurrentUsercallback:^(NSString *incomingURL) {
+    [[TAUserController sharedInstance] getSurveyURLForCurrentUserCallback:^(NSString *incomingURL) {
         self.surveyURL = incomingURL;
         NSURL *url = [NSURL URLWithString:_surveyURL];
         NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
         [self.viewSurvey loadRequest:requestObj];
     }];
-
-    
-  //  NSString *fullURL = @"https://www.tryazon.com/gourmet-souffle-party-closing-survey/";
-    
-    
-    
-//    NSURL *URL = [NSURL URLWithString:surveyURL];
-//    AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:URL];
-//    [manager GET:@"/resources" parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
-//        [resources addObjectsFromArray:responseObject[@"resources"]];
-//        
-//        [manager SUBSCRIBE:@"/resources" usingBlock:^(NSArray *operations, NSError *error) {
-//            for (AFJSONPatchOperation *operation in operations) {
-//                switch (operation.type) {
-//                    case AFJSONAddOperationType:
-//                        [resources addObject:operation.value];
-//                        break;
-//                    default:
-//                        break;
-//                }
-//            }
-//        } error:nil];
-//    } failure:nil];
-    
     
 }
 
