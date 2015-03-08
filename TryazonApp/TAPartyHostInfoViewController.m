@@ -28,6 +28,8 @@
         self.partyPDFData = [self.partyPDF getData];
         //[[TAPDFView alloc] drawRect:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.width)];
 //        TAPDFView *pdfView = [[TAPDFView alloc] initWithFrame:CGRectMake self.partyPDFData];
+        
+        //pull from Parse...
         NSInteger pageNums = 16;
         
         CGFloat yOrigin = 0;
@@ -36,6 +38,8 @@
             TAPDFView *pdfView = [[TAPDFView alloc] initWithFrame:CGRectMake(0, yOrigin, self.view.frame.size.width, self.view.frame.size.height) data:self.partyPDFData pageNum:i];
             yOrigin = yOrigin + self.view.frame.size.height;
             [self.view addSubview:pdfView];
+            //in this loop
+            //something like scrollview.setContentHeight and will make height increase with yOrigin + self.view.height
         }
     
         //create a scrollview to see them all

@@ -26,21 +26,6 @@
                                     <action selector="logInPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lH8-qw-7hm"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Tryazon-logo2a.png" translatesAutoresizingMaskIntoConstraints="NO" id="Mfd-1A-kbz">
-                                <rect key="frame" x="16" y="63" width="568" height="93"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Currently logged in as: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UpH-oN-pKd">
-                                <rect key="frame" x="16" y="20" width="177.5" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="??" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zcv-2I-Ohe">
-                                <rect key="frame" x="16" y="35" width="19.5" height="20"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zws-94-wF8">
                                 <rect key="frame" x="272" y="202" width="56" height="30"/>
                                 <state key="normal" title="Log Out">
@@ -50,23 +35,33 @@
                                     <action selector="logOutButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xsr-Zh-v0w"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Tryazon-logo2a.png" translatesAutoresizingMaskIntoConstraints="NO" id="Mfd-1A-kbz">
+                                <rect key="frame" x="16" y="63" width="568" height="93"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="??" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zcv-2I-Ohe">
+                                <rect key="frame" x="16" y="35" width="19.5" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Currently logged in as: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UpH-oN-pKd">
+                                <rect key="frame" x="16" y="20" width="177.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="UpH-oN-pKd" firstAttribute="leading" secondItem="btb-eP-INK" secondAttribute="leading" id="13K-FC-mvH"/>
                             <constraint firstItem="Zcv-2I-Ohe" firstAttribute="top" secondItem="UpH-oN-pKd" secondAttribute="bottom" constant="1.5" id="3Ed-yf-naV"/>
                             <constraint firstItem="btb-eP-INK" firstAttribute="top" secondItem="Mfd-1A-kbz" secondAttribute="bottom" constant="8" id="8jc-Zi-boB"/>
                             <constraint firstItem="Mfd-1A-kbz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="CHc-u7-1Lm"/>
                             <constraint firstItem="Zws-94-wF8" firstAttribute="top" secondItem="btb-eP-INK" secondAttribute="bottom" constant="8" id="EWV-Gv-4oY"/>
-                            <constraint firstItem="UpH-oN-pKd" firstAttribute="leading" secondItem="Zcv-2I-Ohe" secondAttribute="leading" id="ILt-jm-IG4"/>
-                            <constraint firstItem="UpH-oN-pKd" firstAttribute="centerX" secondItem="btb-eP-INK" secondAttribute="centerX" constant="37.25" id="MuL-Dt-dBX"/>
-                            <constraint firstItem="UpH-oN-pKd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="142" id="YK6-H6-YaU"/>
                             <constraint firstAttribute="centerX" secondItem="Zws-94-wF8" secondAttribute="centerX" id="bG3-ao-f8b"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Mfd-1A-kbz" secondAttribute="trailing" id="jun-Jn-sKO"/>
                             <constraint firstItem="Mfd-1A-kbz" firstAttribute="top" secondItem="Zcv-2I-Ohe" secondAttribute="bottom" constant="8" id="jzv-On-kBZ"/>
                             <constraint firstAttribute="centerX" secondItem="btb-eP-INK" secondAttribute="centerX" constant="-0.5" id="qoi-54-W4s"/>
                             <constraint firstItem="UpH-oN-pKd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="tQp-62-xiG"/>
-                            <constraint firstItem="UpH-oN-pKd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="x0a-oH-waV"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Main Page" id="8IJ-by-a4z"/>
@@ -107,31 +102,31 @@
                                     <segue destination="Jca-5m-DY1" kind="push" id="NXZ-Jt-4RJ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Tips: Do not press the back key before you are done or all information will be lost!" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="85j-1X-vIL">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Tips: Do not press the back key before you are done or all information will be lost!" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="85j-1X-vIL">
                                 <rect key="frame" x="16" y="167" width="568" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="You can press the tab buttons on the bottom and come back to the quiz. " lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ucb-0f-ulm">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="You can press the tab buttons on the bottom and come back to the quiz. " lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ucb-0f-ulm">
                                 <rect key="frame" x="16" y="208" width="568" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hL2-Z8-0Lj">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C3g-VN-pUm">
+                                <rect key="frame" x="200" y="317" width="201" height="30"/>
+                                <state key="normal" title="Add Photos and Screenshots">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hL2-Z8-0Lj">
                                 <rect key="frame" x="16" y="249" width="568" height="60"/>
                                 <string key="text">Do NOT add the photos in the survey link. Click on the Add Photos and Screenshots link below to add the screenshots and photos. </string>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C3g-VN-pUm">
-                                <rect key="frame" x="200" y="317" width="201" height="30"/>
-                                <state key="normal" title="Add Photos and Screenshots">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -143,9 +138,13 @@
                             <constraint firstItem="85j-1X-vIL" firstAttribute="trailing" secondItem="Dd8-hP-Zhu" secondAttribute="trailingMargin" id="W7E-Ru-m7R"/>
                             <constraint firstItem="L18-jP-0uT" firstAttribute="top" secondItem="v2L-Gn-Jxc" secondAttribute="bottom" constant="37" id="Y6W-WM-ky2"/>
                             <constraint firstItem="ucb-0f-ulm" firstAttribute="leading" secondItem="Dd8-hP-Zhu" secondAttribute="leadingMargin" id="aeS-9i-H6z"/>
+                            <constraint firstItem="hL2-Z8-0Lj" firstAttribute="top" secondItem="ucb-0f-ulm" secondAttribute="bottom" constant="8" id="bqR-p7-9Cy"/>
                             <constraint firstItem="jbG-LM-f4x" firstAttribute="top" secondItem="L18-jP-0uT" secondAttribute="bottom" constant="8" id="hy4-NP-gpL"/>
                             <constraint firstAttribute="centerX" secondItem="L18-jP-0uT" secondAttribute="centerX" id="i0e-MQ-9dT"/>
                             <constraint firstItem="85j-1X-vIL" firstAttribute="leading" secondItem="Dd8-hP-Zhu" secondAttribute="leadingMargin" id="nMG-tZ-jaa"/>
+                            <constraint firstItem="85j-1X-vIL" firstAttribute="top" secondItem="jbG-LM-f4x" secondAttribute="bottom" constant="8" id="noE-eb-Ovn"/>
+                            <constraint firstItem="ucb-0f-ulm" firstAttribute="top" secondItem="85j-1X-vIL" secondAttribute="bottom" constant="8" id="v0c-0C-PiE"/>
+                            <constraint firstItem="C3g-VN-pUm" firstAttribute="top" secondItem="hL2-Z8-0Lj" secondAttribute="bottom" constant="8" id="yWa-bs-xd2"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="TdJ-db-w82"/>
