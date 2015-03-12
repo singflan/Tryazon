@@ -41,14 +41,6 @@
     //self.logInView.logInButton.frame = CGRectMake(...); // Set a different frame.
 }
 
-//- (void)logInViewController:(TALogInViewController *)controller
-//didLogInUser:(PFUser *)user {
-//    [self dismissViewControllerAnimated:YES completion:nil];
-//}
-//
-//
-//- (void)logInViewControllerDidCancelLogIn:(TALogInViewController *)logInController {
-//    [self dismissViewControllerAnimated:YES completion:nil];
-//}
+
 
 @end

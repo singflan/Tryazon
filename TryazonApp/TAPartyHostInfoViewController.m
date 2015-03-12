@@ -14,6 +14,7 @@
 @interface TAPartyHostInfoViewController ()
 @property (nonatomic, strong) PFFile *partyPDF;
 @property (nonatomic, strong) NSData *partyPDFData;
+@property (strong, nonatomic) IBOutlet UIWebView *webViewForPDF;
 
 @end
 
@@ -30,25 +31,35 @@
 //        TAPDFView *pdfView = [[TAPDFView alloc] initWithFrame:CGRectMake self.partyPDFData];
         
         //pull from Parse...
-        NSInteger pageNums = 16;
-        
-        CGFloat yOrigin = 0;
-        
-        for (int i = 1; i <= pageNums; i++){
-            TAPDFView *pdfView = [[TAPDFView alloc] initWithFrame:CGRectMake(0, yOrigin, self.view.frame.size.width, self.view.frame.size.height) data:self.partyPDFData pageNum:i];
-            yOrigin = yOrigin + self.view.frame.size.height;
-            [self.view addSubview:pdfView];
-            //in this loop
-            //something like scrollview.setContentHeight and will make height increase with yOrigin + self.view.height
-        }
+//        NSInteger pageNums = 16;
+//        
+//        CGFloat yOrigin = 0;
+//        
+//        
+//        // Create a scrollview to see them all
+//        UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+//        self.view =scrollView;
+//        
+//          // setting up a for loop to draw all of the pages of the pdf
+//        for (int i = 1; i <= pageNums; i++){
+//            TAPDFView *pdfView = [[TAPDFView alloc] initWithFrame:CGRectMake(0, yOrigin, self.view.frame.size.width, self.view.frame.size.height) data:self.partyPDFData pageNum:i];
+//            yOrigin = yOrigin + self.view.frame.size.height;
+//           
+//            [scrollView setContentSize:CGSizeMake(self.view.frame.size.width, yOrigin)];
+//            [self.view addSubview:pdfView];
+//            //in this loop
+//            //something like scrollview.setContentHeight and will make height increase with yOrigin + self.view.height
+//        }
     
-        //create a scrollview to see them all
         
-        
+        [self.webViewForPDF loadData:self.partyPDFData MIMEType:@"application/pdf" textEncodingName:nil baseURL:nil];
+        //self.webViewForPDF.setBuiltInZoomControls(true);
+      //  self.webViewForPDF.setSupportZoom(true);
+        [self.view addSubview:self.webViewForPDF];
+        [self.webViewForPDF release];
     }];
 
-    //PFFile *partyPDF = anotherApplication[@"partypdf"];
-    }
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

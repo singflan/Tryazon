@@ -50,4 +50,18 @@
     }];
 }
 
+- (void)getNumberOfPDFPagesCallback:(void (^)(NSInteger))callback {
+    [[PFUser currentUser] fetchInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+        [[object objectForKey:@"partyhosting"] fetchInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+            if (!error){
+                NSNumber *numOfPages = [object objectForKey:@"pdfnumberofpages"];
+                callback(numOfPages);
+            }
+            else {
+                NSLog(@"You got an error retrieving the pdf file");
+            }
+        }];
+        
+    }];
+}
 @end

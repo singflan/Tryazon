@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="kHZ-bc-rfl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="kHZ-bc-rfl">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -119,6 +119,9 @@
                                 <state key="normal" title="Add Photos and Screenshots">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="f3g-PO-vul" kind="push" id="DEA-Kf-lAd"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hL2-Z8-0Lj">
                                 <rect key="frame" x="16" y="249" width="568" height="60"/>
@@ -151,7 +154,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UkA-he-7kO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1224" y="1035"/>
+            <point key="canvasLocation" x="1244" y="1217"/>
         </scene>
         <!--SurveyDetailViewController-->
         <scene sceneID="iNx-gR-ELr">
@@ -189,7 +192,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0sY-sc-m6w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1864" y="1035"/>
+            <point key="canvasLocation" x="1918" y="964"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="LGA-fM-c3j">
+            <objects>
+                <viewController id="f3g-PO-vul" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iG7-n8-pB3"/>
+                        <viewControllerLayoutGuide type="bottom" id="wXy-Xq-xPu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sZH-cK-duS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Y0V-nC-2TU"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a2B-rV-FAq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1918" y="1623"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="vHi-0g-VpI">
@@ -224,9 +246,24 @@
                     <view key="view" contentMode="scaleToFill" id="J6w-yb-PM1">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="umf-kr-qk4">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="umf-kr-qk4" firstAttribute="leading" secondItem="J6w-yb-PM1" secondAttribute="leading" id="Koz-qf-P0h"/>
+                            <constraint firstAttribute="bottom" secondItem="umf-kr-qk4" secondAttribute="bottom" id="KsC-iZ-E3t"/>
+                            <constraint firstItem="umf-kr-qk4" firstAttribute="top" secondItem="J6w-yb-PM1" secondAttribute="top" id="fVX-XF-V3o"/>
+                            <constraint firstAttribute="trailing" secondItem="umf-kr-qk4" secondAttribute="trailing" id="tFX-3N-kVy"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6Zf-gz-KCJ"/>
+                    <connections>
+                        <outlet property="webViewForPDF" destination="umf-kr-qk4" id="AI9-A0-H6q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZDj-6u-gDK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -336,7 +373,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dxy-PJ-HF6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4160" y="-30"/>
+            <point key="canvasLocation" x="3889" y="-37"/>
         </scene>
         <!--Anytime Parties TableView-->
         <scene sceneID="pbL-n6-xJD">
@@ -363,7 +400,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GHN-vd-Bal" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3348" y="640"/>
+            <point key="canvasLocation" x="3889" y="631"/>
         </scene>
         <!--Survey-->
         <scene sceneID="4Dg-Ob-gFY">
@@ -418,7 +455,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZQ9-IY-eMJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2702" y="640"/>
+            <point key="canvasLocation" x="3230" y="631"/>
         </scene>
         <!--Featured Parties NavController-->
         <scene sceneID="at8-P2-dbd">

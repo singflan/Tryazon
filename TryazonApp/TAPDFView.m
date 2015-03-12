@@ -46,10 +46,7 @@
     CGDataProviderRelease(dataProvider);
     
     
-    
     CGPDFPageRef page = CGPDFDocumentGetPage(pdf, self.pageNum);
-    
-    
     
     
     // get the rectangle of the cropped inside
