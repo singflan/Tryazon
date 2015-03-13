@@ -54,9 +54,9 @@
         
         [self.webViewForPDF loadData:self.partyPDFData MIMEType:@"application/pdf" textEncodingName:nil baseURL:nil];
         //self.webViewForPDF.setBuiltInZoomControls(true);
-      //  self.webViewForPDF.setSupportZoom(true);
+        self.webViewForPDF.scalesPageToFit = YES;
         [self.view addSubview:self.webViewForPDF];
-        [self.webViewForPDF release];
+       // [self.webViewForPDF release];
     }];
 
 }
