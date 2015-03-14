@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 
-@interface TAPartyHostInfoViewController : UIViewController
+@interface TAPartyHostInfoViewController : UIViewController <UIWebViewDelegate>
+
+@property IBOutlet UIActivityIndicatorView *loadingIndicator;
 
 @end

@@ -10,6 +10,7 @@
 
 @interface TAPDFView : UIView
 
+
 - (id)initWithFrame:(CGRect)theFrame data:(NSData*)data pageNum:(NSInteger)number ;
 
 @end

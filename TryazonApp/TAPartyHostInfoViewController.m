@@ -11,7 +11,7 @@
 #import "TAPDFView.h"
 
 
-@interface TAPartyHostInfoViewController ()
+@interface TAPartyHostInfoViewController () 
 @property (nonatomic, strong) PFFile *partyPDF;
 @property (nonatomic, strong) NSData *partyPDFData;
 @property (strong, nonatomic) IBOutlet UIWebView *webViewForPDF;
@@ -22,11 +22,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.webViewForPDF.delegate = self;
+    
     // Do any additional setup after loading the view.
     
     [[TAUserController sharedInstance] getPDFForCurrentUserCallback:^(PFFile *incomingPDF) {
         self.partyPDF = incomingPDF;
         self.partyPDFData = [self.partyPDF getData];
+        
         //[[TAPDFView alloc] drawRect:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.width)];
 //        TAPDFView *pdfView = [[TAPDFView alloc] initWithFrame:CGRectMake self.partyPDFData];
         
@@ -50,15 +53,27 @@
 //            //in this loop
 //            //something like scrollview.setContentHeight and will make height increase with yOrigin + self.view.height
 //        }
-    
         
+        [_loadingIndicator setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray];
+        [_loadingIndicator setHidesWhenStopped:YES];
+        [self.webViewForPDF addSubview:_loadingIndicator];
         [self.webViewForPDF loadData:self.partyPDFData MIMEType:@"application/pdf" textEncodingName:nil baseURL:nil];
         //self.webViewForPDF.setBuiltInZoomControls(true);
         self.webViewForPDF.scalesPageToFit = YES;
         [self.view addSubview:self.webViewForPDF];
-       // [self.webViewForPDF release];
+        
     }];
 
+}
+
+- (void)webViewDidStartLoad:(UIWebView *)webView {
+    [_loadingIndicator startAnimating];
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    [_loadingIndicator stopAnimating];
+    _loadingIndicator.hidden = YES;
 }
 
 - (void)didReceiveMemoryWarning {

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 
-@interface SurveyDetailViewController : UIViewController
+@interface SurveyDetailViewController : UIViewController <UIWebViewDelegate>
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @end

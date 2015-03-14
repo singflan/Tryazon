@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="kHZ-bc-rfl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="kHZ-bc-rfl">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -38,14 +38,20 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Tryazon-logo2a.png" translatesAutoresizingMaskIntoConstraints="NO" id="Mfd-1A-kbz">
                                 <rect key="frame" x="16" y="63" width="568" height="93"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="??" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zcv-2I-Ohe">
-                                <rect key="frame" x="16" y="35" width="19.5" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="??" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zcv-2I-Ohe">
+                                <rect key="frame" x="201" y="20" width="19.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Currently logged in as: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UpH-oN-pKd">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currently logged in as: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UpH-oN-pKd">
                                 <rect key="frame" x="16" y="20" width="177.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Log in with email &amp; password/pin to view party hosting info for your particular party" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yht-dP-pqt">
+                                <rect key="frame" x="16" y="240" width="573" height="79"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -53,15 +59,21 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Zcv-2I-Ohe" firstAttribute="top" secondItem="UpH-oN-pKd" secondAttribute="bottom" constant="1.5" id="3Ed-yf-naV"/>
                             <constraint firstItem="btb-eP-INK" firstAttribute="top" secondItem="Mfd-1A-kbz" secondAttribute="bottom" constant="8" id="8jc-Zi-boB"/>
-                            <constraint firstItem="Mfd-1A-kbz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="CHc-u7-1Lm"/>
                             <constraint firstItem="Zws-94-wF8" firstAttribute="top" secondItem="btb-eP-INK" secondAttribute="bottom" constant="8" id="EWV-Gv-4oY"/>
+                            <constraint firstAttribute="centerX" secondItem="Yht-dP-pqt" secondAttribute="centerX" constant="-2.5" id="ItC-aY-2rz"/>
+                            <constraint firstItem="UpH-oN-pKd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="WzL-cS-0Av"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Yht-dP-pqt" secondAttribute="bottom" constant="232" id="Xk4-sJ-cbX"/>
+                            <constraint firstItem="Yht-dP-pqt" firstAttribute="top" secondItem="Zws-94-wF8" secondAttribute="bottom" constant="8" id="Z9l-C2-0Ao"/>
                             <constraint firstAttribute="centerX" secondItem="Zws-94-wF8" secondAttribute="centerX" id="bG3-ao-f8b"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Zcv-2I-Ohe" secondAttribute="trailing" constant="363.5" id="hEq-V6-bDN"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Mfd-1A-kbz" secondAttribute="trailing" id="jun-Jn-sKO"/>
                             <constraint firstItem="Mfd-1A-kbz" firstAttribute="top" secondItem="Zcv-2I-Ohe" secondAttribute="bottom" constant="8" id="jzv-On-kBZ"/>
                             <constraint firstAttribute="centerX" secondItem="btb-eP-INK" secondAttribute="centerX" constant="-0.5" id="qoi-54-W4s"/>
+                            <constraint firstItem="Yht-dP-pqt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="rdX-bG-FtT"/>
                             <constraint firstItem="UpH-oN-pKd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="tQp-62-xiG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Yht-dP-pqt" secondAttribute="trailing" constant="-5" id="wcd-WL-0nw"/>
+                            <constraint firstItem="Zcv-2I-Ohe" firstAttribute="leading" secondItem="UpH-oN-pKd" secondAttribute="trailing" constant="7.5" id="zYB-fN-AbN"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Main Page" id="8IJ-by-a4z"/>
@@ -172,11 +184,16 @@
                                 <rect key="frame" x="-25" y="-4" width="650" height="608"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Xqr-IL-oCL">
+                                <rect key="frame" x="290" y="290" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ZVM-mT-3BX" firstAttribute="leading" secondItem="XDh-5j-p4K" secondAttribute="leadingMargin" id="2lu-rG-8sD"/>
                             <constraint firstItem="ZVM-mT-3BX" firstAttribute="leading" secondItem="XDh-5j-p4K" secondAttribute="leadingMargin" id="Edw-JE-Kpz"/>
+                            <constraint firstItem="ZVM-mT-3BX" firstAttribute="centerY" secondItem="Xqr-IL-oCL" secondAttribute="centerY" id="N5b-TB-aXc"/>
+                            <constraint firstItem="ZVM-mT-3BX" firstAttribute="centerX" secondItem="Xqr-IL-oCL" secondAttribute="centerX" id="bDQ-f6-OV4"/>
                             <constraint firstAttribute="bottomMargin" secondItem="ZVM-mT-3BX" secondAttribute="bottom" id="cmV-fw-n4Q"/>
                             <constraint firstAttribute="bottomMargin" secondItem="ZVM-mT-3BX" secondAttribute="bottom" id="gDJ-rq-fqo"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ZVM-mT-3BX" secondAttribute="trailing" id="nr5-CS-Cou"/>
@@ -187,6 +204,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="PNJ-oY-tvi"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="Xqr-IL-oCL" id="8Ac-nL-gEn"/>
                         <outlet property="viewSurvey" destination="ZVM-mT-3BX" id="kaw-1P-Q3P"/>
                     </connections>
                 </viewController>
@@ -251,17 +269,23 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="QEI-6a-4Ap">
+                                <rect key="frame" x="290" y="285" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="QEI-6a-4Ap" firstAttribute="centerY" secondItem="umf-kr-qk4" secondAttribute="centerY" constant="-5" id="BMe-u8-uDR"/>
                             <constraint firstItem="umf-kr-qk4" firstAttribute="leading" secondItem="J6w-yb-PM1" secondAttribute="leading" id="Koz-qf-P0h"/>
                             <constraint firstAttribute="bottom" secondItem="umf-kr-qk4" secondAttribute="bottom" id="KsC-iZ-E3t"/>
+                            <constraint firstItem="QEI-6a-4Ap" firstAttribute="centerX" secondItem="umf-kr-qk4" secondAttribute="centerX" id="efJ-II-1vv"/>
                             <constraint firstItem="umf-kr-qk4" firstAttribute="top" secondItem="J6w-yb-PM1" secondAttribute="top" id="fVX-XF-V3o"/>
                             <constraint firstAttribute="trailing" secondItem="umf-kr-qk4" secondAttribute="trailing" id="tFX-3N-kVy"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6Zf-gz-KCJ"/>
                     <connections>
+                        <outlet property="loadingIndicator" destination="QEI-6a-4Ap" id="cse-bb-WdV"/>
                         <outlet property="webViewForPDF" destination="umf-kr-qk4" id="AI9-A0-H6q"/>
                     </connections>
                 </viewController>

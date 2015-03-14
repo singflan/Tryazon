@@ -16,10 +16,12 @@
 @end
 
 @implementation SurveyDetailViewController
+@synthesize activityIndicator;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.viewSurvey.delegate = self;
     
     [[TAUserController sharedInstance] getSurveyURLForCurrentUserCallback:^(NSString *incomingURL) {
         self.surveyURL = incomingURL;
@@ -38,6 +40,23 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma spinner
+- (void)webViewDidStartLoad:(UIWebView *)searchWebView {
+    
+    [activityIndicator startAnimating];
+}
+
+- (void)webView:(UIWebView *)searchWebView didFailLoadWithError:(NSError *)error {
+    
+    [activityIndicator stopAnimating];
+    
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)searchWebView {
+    
+    [activityIndicator stopAnimating];
+    activityIndicator.hidden = YES;
+}
 /*
 #pragma mark - Navigation
 
