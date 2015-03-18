@@ -8,6 +8,7 @@
 
 #import "TAPartyHostInfoViewController.h"
 #import "TAUserController.h"
+#import "TALoginPresenter.h"
 #import "TAPDFView.h"
 
 
@@ -19,6 +20,11 @@
 @end
 
 @implementation TAPartyHostInfoViewController
+@synthesize loadingIndicator;
+
+- (void)viewDidAppear:(BOOL)animated {
+    [TALoginPresenter logInNeeded:self];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -54,9 +60,11 @@
 //            //something like scrollview.setContentHeight and will make height increase with yOrigin + self.view.height
 //        }
         
-        [_loadingIndicator setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray];
-        [_loadingIndicator setHidesWhenStopped:YES];
-        [self.webViewForPDF addSubview:_loadingIndicator];
+        // Add & format the loading indicator
+        [loadingIndicator setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray];
+        [loadingIndicator setHidesWhenStopped:YES];
+        [self.webViewForPDF addSubview:loadingIndicator];
+       
         [self.webViewForPDF loadData:self.partyPDFData MIMEType:@"application/pdf" textEncodingName:nil baseURL:nil];
         //self.webViewForPDF.setBuiltInZoomControls(true);
         self.webViewForPDF.scalesPageToFit = YES;
@@ -67,13 +75,20 @@
 }
 
 - (void)webViewDidStartLoad:(UIWebView *)webView {
-    [_loadingIndicator startAnimating];
+    [loadingIndicator startAnimating];
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
-    [_loadingIndicator stopAnimating];
-    _loadingIndicator.hidden = YES;
+    [loadingIndicator stopAnimating];
+    loadingIndicator.hidden = YES;
+}
+
+- (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user{
+    
+    [logInController dismissViewControllerAnimated:YES completion:^{
+        
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

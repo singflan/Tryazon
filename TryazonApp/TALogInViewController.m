@@ -24,7 +24,6 @@
     self.logInView.usernameField.placeholder = @"Email Address";
     self.logInView.passwordField.placeholder = @"Password/PIN";
     
-    
     UIImageView *logoView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Tryazon-logo2a.png"]];
     self.logInView.logo = logoView; // logo can be any UIView
     
@@ -34,12 +33,15 @@
     self.signUpController.fields = (PFSignUpFieldsUsernameAndPassword
                                | PFSignUpFieldsSignUpButton
                                | PFSignUpFieldsDismissButton);
+    
 }
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     //self.logInView.logInButton.frame = CGRectMake(...); // Set a different frame.
 }
+
+
 
 
 

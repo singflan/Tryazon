@@ -10,7 +10,7 @@
 
 @implementation UIColor (ExtraColorTools)
 
-+(UIColor *) randomColor {
++ (UIColor *) randomColor {
     
     CGFloat redColor = ((CGFloat)arc4random() / RAND_MAX);
     CGFloat blueColor = ((CGFloat)arc4random() / RAND_MAX);
@@ -19,6 +19,12 @@
     UIColor *color = [[UIColor alloc] initWithRed:redColor green:greenColor blue:blueColor alpha:1];
     
     return color;
+}
+
++ (UIColor *) getTryazonColor {
+    UIColor *tryazonColor = [[UIColor alloc] initWithRed:.53 green:.65 blue:.77 alpha:1];
+    
+    return tryazonColor;
 }
 
 @end

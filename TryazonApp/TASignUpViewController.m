@@ -22,6 +22,7 @@
     
     self.signUpView.usernameField.placeholder = @"Email Address";
     self.signUpView.passwordField.placeholder = @"Password or PIN (any number of characters or numbers)";
+    self.emailAsUsername = YES;
     
     
     UIImageView *logoView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Tryazon-logo2a.png"]];

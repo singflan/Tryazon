@@ -7,6 +7,9 @@
 //
 
 #import "TASurveyViewController.h"
+#import "TALoginPresenter.h"
+#import "TALogInViewController.h"
+#import <Parse/Parse.h>
 
 @interface TASurveyViewController ()
 
@@ -26,6 +29,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [TALoginPresenter logInNeeded:self];
+}
+
+- (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user{
+    [logInController dismissViewControllerAnimated:YES completion:^{
+    }];
+}
 /*
 #pragma mark - Navigation
 

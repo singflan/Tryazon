@@ -9,7 +9,7 @@
 #import "TATitlePageViewController.h"
 #import <Parse/Parse.h>
 #import "TALogInViewController.h"
-
+#import "TALoginPresenter.h"
 @interface TATitlePageViewController() <PFLogInViewControllerDelegate>
 
 
@@ -25,13 +25,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-//    if (![PFUser currentUser]) {
-//        [self performSegueWithIdentifier:@"logInSegue" sender:self];
-//    }
-//    else
-//    {
-//       // NSLog(@"%@", currentUser.username)
-//    }
     
 }
 
@@ -39,15 +32,8 @@
     [self resetUserLabel];
 }
 
-
-- (IBAction)logInPressed:(id)sender {
-    
-    TALogInViewController *controller = [[TALogInViewController alloc] init];
-    controller.delegate = self;
-    [self presentViewController:controller animated:YES completion:nil];
-    
-    
-
+- (void)viewDidAppear:(BOOL)animated {
+    [TALoginPresenter logInNeeded:self];
 }
 
 -(void)resetUserLabel {
@@ -63,8 +49,8 @@
 - (IBAction)logOutButton:(id)sender {
     
     [PFUser logOut];
-    //PFUser *currentUser = [PFUser currentUser];
     [self resetUserLabel];
+    //[TALoginPresenter logInNeeded:self];
 }
 
 -(void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user{

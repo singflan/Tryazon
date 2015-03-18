@@ -11,6 +11,6 @@
 
 @interface TAPartyHostInfoViewController : UIViewController <UIWebViewDelegate>
 
-@property IBOutlet UIActivityIndicatorView *loadingIndicator;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadingIndicator;
 
 @end
