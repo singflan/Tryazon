@@ -7,8 +7,13 @@
 //
 
 #import "TAPartyPlanningChecklistTableViewController.h"
+#import <Parse/Parse.h>
 
 @interface TAPartyPlanningChecklistTableViewController ()
+@property NSArray *checklistSection1;
+@property NSArray *checklistSection2;
+@property NSArray *checklistSection3;
+@property NSArray *checklistSection4;
 
 @end
 
@@ -16,6 +21,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"Checklist"];
+    [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+        self.checklistSection1 = object[@"prePartyPlanning"];
+        self.checklistSection2 = object[@"weekOfParty"];
+        self.checklistSection3 = object[@"dayOfParty"];
+        self.checklistSection4 = object[@"afterParty"];
+    
+        [self.tableView reloadData];
+    }];
+    
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
+    self.title = @"Party Planning Checklist";
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -34,25 +52,72 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 4;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
+    switch (section) {
+        case 0:
+            return self.checklistSection1.count;
+            break;
+        case 1:
+            return self.checklistSection2.count;
+            break;
+        case 2:
+            return self.checklistSection3.count;
+            break;
+        case 3:
+            return self.checklistSection4.count;
+            break;
+        default:
+            break;
+    }
+    
     return 0;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
-    // Configure the cell...
+    switch (indexPath.section) {
+        case 0:
+            cell.textLabel.text = [self.checklistSection1 objectAtIndex:indexPath.row];
+            break;
+        case 1:
+            cell.textLabel.text = [self.checklistSection2 objectAtIndex:indexPath.row];
+            break;
+        case 2:
+            cell.textLabel.text = [self.checklistSection3 objectAtIndex:indexPath.row];
+            break;
+        case 3:
+            cell.textLabel.text = [self.checklistSection4 objectAtIndex:indexPath.row];
+            break;
+        default:
+            break;
+    }
     
     return cell;
 }
-*/
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    if(section == 0)
+    {
+        return @"Pre-Party Planning (1-2 weeks before party)";
+    }
+    else if(section == 1)
+    {
+        return @"Week of Party";
+    }
+    else if(section ==2)
+    {
+        return @"Day of Party";
+    }
+    else
+    {
+        return @"After the Party";
+    }
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

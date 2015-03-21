@@ -28,37 +28,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.webViewForPDF.delegate = self;
     
-    // Do any additional setup after loading the view.
+    // Conceptually if (!event) { put label that says : Choose event on first page arrow to first tab}   
     
     [[TAUserController sharedInstance] getPDFForCurrentUserCallback:^(PFFile *incomingPDF) {
         self.partyPDF = incomingPDF;
         self.partyPDFData = [self.partyPDF getData];
-        
-        //[[TAPDFView alloc] drawRect:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.width)];
-//        TAPDFView *pdfView = [[TAPDFView alloc] initWithFrame:CGRectMake self.partyPDFData];
-        
-        //pull from Parse...
-//        NSInteger pageNums = 16;
-//        
-//        CGFloat yOrigin = 0;
-//        
-//        
-//        // Create a scrollview to see them all
-//        UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-//        self.view =scrollView;
-//        
-//          // setting up a for loop to draw all of the pages of the pdf
-//        for (int i = 1; i <= pageNums; i++){
-//            TAPDFView *pdfView = [[TAPDFView alloc] initWithFrame:CGRectMake(0, yOrigin, self.view.frame.size.width, self.view.frame.size.height) data:self.partyPDFData pageNum:i];
-//            yOrigin = yOrigin + self.view.frame.size.height;
-//           
-//            [scrollView setContentSize:CGSizeMake(self.view.frame.size.width, yOrigin)];
-//            [self.view addSubview:pdfView];
-//            //in this loop
-//            //something like scrollview.setContentHeight and will make height increase with yOrigin + self.view.height
-//        }
         
         // Add & format the loading indicator
         [loadingIndicator setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray];
