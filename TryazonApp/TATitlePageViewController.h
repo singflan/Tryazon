@@ -9,12 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface TATitlePageViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UIButton *signUpLogInButton;
-@property (weak, nonatomic) IBOutlet UILabel *currentUserLabel;
-@property (weak, nonatomic) IBOutlet UIButton *logOutButton;
-
-
-- (IBAction)logInPressed:(id)sender;
-//+ (void) logIn;
 
 @end

@@ -7,7 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TAParty.h"
 
 @interface TAPartyController : NSObject
+
+@property (strong, nonatomic) TAParty *currentParty;
+
++ (TAPartyController *)sharedInstance;
+- (NSArray *)getParties;
+- (void)addParty: (TAParty *)party;
 
 @end

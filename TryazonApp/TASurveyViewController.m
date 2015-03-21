@@ -30,7 +30,7 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    [TALoginPresenter logInNeeded:self];
+   // [TALoginPresenter logInNeeded:self];
 }
 
 - (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user{

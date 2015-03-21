@@ -7,7 +7,7 @@
 //
 
 #import "SurveyDetailViewController.h"
-#import "TAUserController.h"
+#import "TAPartyController.h"
 
 @interface SurveyDetailViewController ()
 @property (weak, nonatomic) IBOutlet UIWebView *viewSurvey;
@@ -23,12 +23,11 @@
     // Do any additional setup after loading the view.
     self.viewSurvey.delegate = self;
     
-    [[TAUserController sharedInstance] getSurveyURLForCurrentUserCallback:^(NSString *incomingURL) {
-        self.surveyURL = incomingURL;
-        NSURL *url = [NSURL URLWithString:_surveyURL];
-        NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-        [self.viewSurvey loadRequest:requestObj];
-    }];
+    TAParty *party = [TAPartyController sharedInstance].currentParty;
+   // self.surveyURL = ;
+    NSURL *url = [NSURL URLWithString:party.partySurveyURL];
+    NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
+    [self.viewSurvey loadRequest:requestObj];
     
 }
 

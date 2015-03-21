@@ -7,57 +7,50 @@
 //
 
 #import "TATitlePageViewController.h"
-#import <Parse/Parse.h>
-#import "TALogInViewController.h"
-#import "TALoginPresenter.h"
-@interface TATitlePageViewController() <PFLogInViewControllerDelegate>
+#import "TANetworkController.h"
+#import "TAPartyController.h"
 
-
-@property(nonatomic, strong)PFUser *currentUser;
+@interface TATitlePageViewController() <UITableViewDelegate, UITableViewDataSource>
+@property (strong, nonatomic) IBOutlet UITableView *partyTableView;
 
 @end
 
 @implementation TATitlePageViewController
 
-
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    self.partyTableView.delegate = self;
+    self.partyTableView.dataSource = self;
     
-}
+    [self.partyTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
 
-- (void)viewWillAppear:(BOOL)animated {
-    [self resetUserLabel];
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [TALoginPresenter logInNeeded:self];
-}
-
--(void)resetUserLabel {
-    PFUser *currentUser = [PFUser currentUser];
-    if (currentUser) {
-        self.currentUserLabel.text = currentUser.username;
-    }
-    else {
-        self.currentUserLabel.text = @"No user logged in.";
-    }
-}
-
-- (IBAction)logOutButton:(id)sender {
-    
-    [PFUser logOut];
-    [self resetUserLabel];
-    //[TALoginPresenter logInNeeded:self];
-}
-
--(void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user{
-    
-    [logInController dismissViewControllerAnimated:YES completion:^{
-        
+    [[TANetworkController sharedInstance] getParties:^(BOOL finished) {
+        [self.partyTableView reloadData];
     }];
+    
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return [[TAPartyController sharedInstance] getParties].count;
+}
+
+// Setting party based on row clicked on on title page
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [TAPartyController sharedInstance].currentParty =
+        [[[TAPartyController sharedInstance] getParties] objectAtIndex:indexPath.row];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    
+    TAParty *party = [[[TAPartyController sharedInstance] getParties] objectAtIndex:indexPath.row];
+    cell.textLabel.text = party.partyName;
+
+    return cell;
 }
 
 - (void)didReceiveMemoryWarning {

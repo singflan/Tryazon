@@ -8,12 +8,14 @@
 
 #import "TAPartyPlanningChecklistTableViewController.h"
 #import <Parse/Parse.h>
+#import "TAParty.h"
+#import "TAPartyController.h"
+#import "TANetworkController.h"
 
 @interface TAPartyPlanningChecklistTableViewController ()
-@property NSArray *checklistSection1;
-@property NSArray *checklistSection2;
-@property NSArray *checklistSection3;
-@property NSArray *checklistSection4;
+@property TAParty *currentParty;
+@property (strong, nonatomic) TAChecklist *checklist;
+
 
 @end
 
@@ -22,15 +24,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    PFQuery *query = [PFQuery queryWithClassName:@"Checklist"];
-    [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
-        self.checklistSection1 = object[@"prePartyPlanning"];
-        self.checklistSection2 = object[@"weekOfParty"];
-        self.checklistSection3 = object[@"dayOfParty"];
-        self.checklistSection4 = object[@"afterParty"];
-    
-        [self.tableView reloadData];
-    }];
+//    PFQuery *query = [PFQuery queryWithClassName:@"Checklist"];
+//    [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+//        self.checklistSection1 = object[@"prePartyPlanning"];
+//        self.checklistSection2 = object[@"weekOfParty"];
+//        self.checklistSection3 = object[@"dayOfParty"];
+//        self.checklistSection4 = object[@"afterParty"];
+//    
+//        [self.tableView reloadData];
+//    }];
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
     self.title = @"Party Planning Checklist";
@@ -40,6 +42,17 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    self.currentParty = [TAPartyController sharedInstance].currentParty;
+    [[TANetworkController sharedInstance] getChecklistForCurrentParty:self.currentParty.checklistPointerID Callback:^(TAChecklist * checklist) {
+        
+        self.checklist = checklist;
+        
+        [self.tableView reloadData];
+    }];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -58,16 +71,16 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     switch (section) {
         case 0:
-            return self.checklistSection1.count;
+            return self.checklist.prePartyPlanning.count;
             break;
         case 1:
-            return self.checklistSection2.count;
+            return self.checklist.weekOfParty.count;
             break;
         case 2:
-            return self.checklistSection3.count;
+            return self.checklist.dayOfParty.count;
             break;
         case 3:
-            return self.checklistSection4.count;
+            return self.checklist.afterParty.count;
             break;
         default:
             break;
@@ -81,16 +94,16 @@
     
     switch (indexPath.section) {
         case 0:
-            cell.textLabel.text = [self.checklistSection1 objectAtIndex:indexPath.row];
+            cell.textLabel.text = [self.checklist.prePartyPlanning objectAtIndex:indexPath.row];
             break;
         case 1:
-            cell.textLabel.text = [self.checklistSection2 objectAtIndex:indexPath.row];
+            cell.textLabel.text = [self.checklist.weekOfParty objectAtIndex:indexPath.row];
             break;
         case 2:
-            cell.textLabel.text = [self.checklistSection3 objectAtIndex:indexPath.row];
+            cell.textLabel.text = [self.checklist.dayOfParty objectAtIndex:indexPath.row];
             break;
         case 3:
-            cell.textLabel.text = [self.checklistSection4 objectAtIndex:indexPath.row];
+            cell.textLabel.text = [self.checklist.afterParty objectAtIndex:indexPath.row];
             break;
         default:
             break;
