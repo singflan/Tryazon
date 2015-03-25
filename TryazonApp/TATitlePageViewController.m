@@ -12,6 +12,7 @@
 #import "UIColor+ExtraColorTools.h"
 
 @interface TATitlePageViewController() <UITableViewDelegate, UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UILabel *selectPartyLabel;
 @property (strong, nonatomic) IBOutlet UITableView *partyTableView;
 
 @end
@@ -29,6 +30,8 @@
     [[TANetworkController sharedInstance] getParties:^(BOOL finished) {
         [self.partyTableView reloadData];
     }];
+    
+    self.selectPartyLabel.textColor = [UIColor getLightTryazonColor];
     
 }
 
@@ -50,7 +53,7 @@
     
     TAParty *party = [[[TAPartyController sharedInstance] getParties] objectAtIndex:indexPath.row];
     cell.textLabel.text = party.partyName;
-    cell.textLabel.textColor = [UIColor getDarkTryazonColor];
+    cell.textLabel.textColor = [UIColor getBrownTryazonColor];
 
     return cell;
 }

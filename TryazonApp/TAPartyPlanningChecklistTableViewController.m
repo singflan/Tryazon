@@ -15,7 +15,8 @@
 @interface TAPartyPlanningChecklistTableViewController ()
 @property TAParty *currentParty;
 @property (strong, nonatomic) TAChecklist *checklist;
-
+@property (strong, nonatomic) UIButton *checkButton;
+@property BOOL *checkBoxSelected;
 
 @end
 
@@ -36,12 +37,19 @@
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
     
+    [self.tableView setEditing:YES];
+    self.tableView.allowsSelectionDuringEditing = YES;
+    //[self.tableView]
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
+    //self.tableView.allowsSelection = NO;
+    
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -109,7 +117,16 @@
             break;
     }
     
+  //  self.checkButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 12, 20, 20)];
+  //  [self.checkButton addTarget:self action:@selector(toggleButton:) forControlEvents:UIControlEventTouchUpInside];
+    
+    
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
@@ -131,6 +148,36 @@
         return @"After the Party";
     }
 }
+
+
+
+//- (void)toggleButton: (id) sender
+//{
+//    UIButton *tappedButton = (UIButton*)sender;
+//    
+//    NSLog(@"%d",tappedButton.tag);
+//    if([tappedButton.currentImage isEqual:[UIImage imageNamed:@"checkbox.png"]])
+//    {
+//        [sender  setImage:[UIImage imageNamed: @"checkbox-checked.png"] forState:UIControlStateNormal];
+//    }
+//    else
+//    {
+//        [sender  setImage:[UIImage imageNamed: @"checkbox.png"] forState:UIControlStateNormal];
+//        
+//    }
+//
+//}
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return UITableViewCellAccessoryCheckmark;
+    //return UITableViewCellEditingStyleNone;
+}
+//diabled, normal, highlighted
+//selected UIButton selectedcheck....
+//can set image for different control states....
+
+
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
