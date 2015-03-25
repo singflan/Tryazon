@@ -16,6 +16,7 @@
 //@property (nonatomic, strong) PFFile *partyPDF;
 @property (nonatomic, strong) NSData *partyPDFData;
 @property (strong, nonatomic) IBOutlet UIWebView *webViewForPDF;
+@property (weak, nonatomic) IBOutlet UILabel *failedToLoadLabel;
 
 @end
 
@@ -54,6 +55,7 @@
         
     }
     else {
+        _failedToLoadLabel.text = @"No party has been selected, please select the party you are hosting on the first tab: Select a Party";
         // UIImageView or UILabel directing to tab 1
     }
 }

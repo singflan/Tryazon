@@ -12,6 +12,8 @@
 @interface SurveyDetailViewController ()
 @property (weak, nonatomic) IBOutlet UIWebView *viewSurvey;
 @property (nonatomic, strong) NSString *surveyURL;
+@property (weak, nonatomic) IBOutlet UILabel *failedToLoadLabel;
+@property (nonatomic) TAParty *party;
 
 @end
 
@@ -20,14 +22,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    if ([TAPartyController sharedInstance].currentParty) {
+        self.party = [TAPartyController sharedInstance].currentParty;
     // Do any additional setup after loading the view.
-    self.viewSurvey.delegate = self;
+        self.viewSurvey.delegate = self;
     
-    TAParty *party = [TAPartyController sharedInstance].currentParty;
+        //TAParty *party = [TAPartyController sharedInstance].currentParty;
    // self.surveyURL = ;
-    NSURL *url = [NSURL URLWithString:party.partySurveyURL];
-    NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-    [self.viewSurvey loadRequest:requestObj];
+        NSURL *url = [NSURL URLWithString:_party.partySurveyURL];
+        NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
+        [self.viewSurvey loadRequest:requestObj];
+    }
+    else {
+        _failedToLoadLabel.text = @"No party has been selected, please select the party you are hosting on the first tab: Select a Party";
+    }
     
 }
 

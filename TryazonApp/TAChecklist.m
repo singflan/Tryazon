@@ -15,7 +15,6 @@
     self.weekOfParty = object[@"weekOfParty"];
     self.dayOfParty = object[@"dayOfParty"];
     self.afterParty = object[@"afterParty"];
-    NSLog(@"foood where are you?");
     return self;
 }
 

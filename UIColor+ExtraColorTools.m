@@ -21,10 +21,21 @@
     return color;
 }
 
-+ (UIColor *) getTryazonColor {
-    UIColor *tryazonColor = [[UIColor alloc] initWithRed:.53 green:.65 blue:.77 alpha:1];
++ (UIColor *) getLightTryazonColor {
+    UIColor *tryazonColor = [[UIColor alloc] initWithRed:.14 green:.69 blue:.76 alpha:1];
     
     return tryazonColor;
 }
 
++ (UIColor *) getDarkTryazonColor {
+    UIColor *tryazonColor = [[UIColor alloc] initWithRed:.09 green:.47 blue:.51 alpha:1];
+    
+    return tryazonColor;
+}
+
++ (UIColor *) getBrownTryazonColor {
+    UIColor *tryazonColor = [[UIColor alloc] initWithRed:.33 green:.19 blue:.18 alpha:1];
+    
+    return tryazonColor;
+}
 @end

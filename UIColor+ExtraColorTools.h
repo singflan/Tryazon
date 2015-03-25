@@ -11,6 +11,8 @@
 @interface UIColor (ExtraColorTools)
 
 + (UIColor *) randomColor;
-
++ (UIColor *) getLightTryazonColor;
++ (UIColor *) getDarkTryazonColor;
++ (UIColor *) getBrownTryazonColor;
 
 @end

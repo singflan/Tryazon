@@ -9,9 +9,9 @@
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
 #import "TATitlePageViewController.h"
+#import "UIColor+ExtraColorTools.h"
 
 @interface AppDelegate ()
-
 @end
 
 @implementation AppDelegate
@@ -30,6 +30,41 @@
     
     // [Optional] Track statistics around application opens.
     //[PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
+    UITabBar *tabBar = tabBarController.tabBar;
+    UITabBarItem *tabBarItem1 = [tabBar.items objectAtIndex:0];
+    UITabBarItem *tabBarItem2 = [tabBar.items objectAtIndex:1];
+    UITabBarItem *tabBarItem3 = [tabBar.items objectAtIndex:2];
+    UITabBarItem *tabBarItem4 = [tabBar.items objectAtIndex:3];
+    UITabBarItem *tabBarItem5 = [tabBar.items objectAtIndex:4];
+    
+    tabBarItem1.title = @"Select a Party";
+    tabBarItem2.title = @"Future Parties";
+    tabBarItem3.title = @"Checklist";
+    tabBarItem4.title = @"Hosting Info";
+    tabBarItem5.title = @"Survey";
+
+    
+//    [tabBarItem1 setFinishedSelectedImage:[UIImage imageNamed:@"home_selected.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"home.png"]];
+//    [tabBarItem2 setFinishedSelectedImage:[UIImage imageNamed:@"maps_selected.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"maps.png"]];
+//    [tabBarItem3 setFinishedSelectedImage:[UIImage imageNamed:@"myplan_selected.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"myplan.png"]];
+//    [tabBarItem4 setFinishedSelectedImage:[UIImage imageNamed:@"settings_selected.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"settings.png"]];
+    
+    //UIImage* tabBarBackground = [UIImage imageNamed:@"tabbar.png"];
+    //[[UITabBar appearance] setBackgroundImage:tabBarBackground];
+    //[[UITabBar appearance] setSelectionIndicatorImage:[UIImage imageNamed:@"tabbar_selected.png"]];
+    
+    UIColor *titleHighlightedColor = [UIColor whiteColor]; //[UIColor colorWithRed:153/255.0 green:192/255.0 blue:48/255.0 alpha:1.0];
+    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                       [UIColor getBrownTryazonColor], NSForegroundColorAttributeName,
+                                                       nil] forState:UIControlStateSelected];
+    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                       titleHighlightedColor, NSForegroundColorAttributeName,
+                                                       nil] forState:UIControlStateNormal];
+    
+    //[[UITabBar appearance] setTintColor:[UIColor whiteColor]];
+   // [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor blackColor]} forState:normal];
+    //[[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor blackColor]} forState:];
     
     //letting os know that am interested in sending push notifications
 //    [application registerForRemoteNotificationTypes:(UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound)];

@@ -9,6 +9,7 @@
 #import "TATitlePageViewController.h"
 #import "TANetworkController.h"
 #import "TAPartyController.h"
+#import "UIColor+ExtraColorTools.h"
 
 @interface TATitlePageViewController() <UITableViewDelegate, UITableViewDataSource>
 @property (strong, nonatomic) IBOutlet UITableView *partyTableView;
@@ -49,6 +50,7 @@
     
     TAParty *party = [[[TAPartyController sharedInstance] getParties] objectAtIndex:indexPath.row];
     cell.textLabel.text = party.partyName;
+    cell.textLabel.textColor = [UIColor getDarkTryazonColor];
 
     return cell;
 }
