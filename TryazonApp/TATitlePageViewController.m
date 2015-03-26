@@ -10,6 +10,7 @@
 #import "TANetworkController.h"
 #import "TAPartyController.h"
 #import "UIColor+ExtraColorTools.h"
+#import "TAPartyPlanningChecklistTableViewController.h"
 
 @interface TATitlePageViewController() <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UILabel *selectPartyLabel;
@@ -31,6 +32,7 @@
         [self.partyTableView reloadData];
     }];
     
+    
     self.selectPartyLabel.textColor = [UIColor getLightTryazonColor];
     
 }
@@ -45,6 +47,10 @@
     
     [TAPartyController sharedInstance].currentParty =
         [[[TAPartyController sharedInstance] getParties] objectAtIndex:indexPath.row];
+    
+    UITabBarController *tabBarController = [[UITabBarController alloc] init];
+    
+    [self.navigationController pushViewController:tabBarController animated:YES];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -54,7 +60,10 @@
     TAParty *party = [[[TAPartyController sharedInstance] getParties] objectAtIndex:indexPath.row];
     cell.textLabel.text = party.partyName;
     cell.textLabel.textColor = [UIColor getBrownTryazonColor];
-
+    if (!party) {
+        cell.textLabel.text = @"(Parties will only show if internet connection available)";
+    }
+    
     return cell;
 }
 
@@ -63,6 +72,12 @@
     // Dispose of any resources that can be recreated.
 }
 
-
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//    if ([[segue identifier] isEqualToString:@"showTabBarController"]) {
+//        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+//        //NSDate *object = self.objects[indexPath.row];
+//        [[segue destinationViewController] setDetailItem:object];
+//    }
+//}
 
 @end

@@ -30,19 +30,19 @@
     
     // [Optional] Track statistics around application opens.
     //[PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
-    UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
+    UITabBarController *tabBarController = [[UITabBarController alloc] init];
     UITabBar *tabBar = tabBarController.tabBar;
     UITabBarItem *tabBarItem1 = [tabBar.items objectAtIndex:0];
     UITabBarItem *tabBarItem2 = [tabBar.items objectAtIndex:1];
     UITabBarItem *tabBarItem3 = [tabBar.items objectAtIndex:2];
     UITabBarItem *tabBarItem4 = [tabBar.items objectAtIndex:3];
-    UITabBarItem *tabBarItem5 = [tabBar.items objectAtIndex:4];
+   // UITabBarItem *tabBarItem5 = [tabBar.items objectAtIndex:4];
     
-    tabBarItem1.title = @"Select a Party";
-    tabBarItem2.title = @"Future Parties";
-    tabBarItem3.title = @"Checklist";
-    tabBarItem4.title = @"Hosting Info";
-    tabBarItem5.title = @"Survey";
+    //tabBarItem1.title = @"Select a Party";
+    tabBarItem1.title = @"Future Parties";
+    tabBarItem2.title = @"Checklist";
+    tabBarItem3.title = @"Hosting Info";
+    tabBarItem4.title = @"Survey";
 
     
 //    [tabBarItem1 setFinishedSelectedImage:[UIImage imageNamed:@"home_selected.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"home.png"]];
@@ -83,8 +83,6 @@
 
     
         // [self performSegueWithIdentifier:@"logInSegue" sender:self];
-    
-
     
     return YES;
 }
