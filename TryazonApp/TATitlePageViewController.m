@@ -15,6 +15,7 @@
 @interface TATitlePageViewController() <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UILabel *selectPartyLabel;
 @property (strong, nonatomic) IBOutlet UITableView *partyTableView;
+@property (weak, nonatomic) IBOutlet UIButton *signUpButton;
 
 @end
 
@@ -27,13 +28,16 @@
     self.partyTableView.dataSource = self;
     
     [self.partyTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
+    //[self.partyTableView registerClass:nil forHeaderFooterViewReuseIdentifier:@"PartyHeader"];
+   // self.partyTableView
 
     [[TANetworkController sharedInstance] getParties:^(BOOL finished) {
         [self.partyTableView reloadData];
     }];
-    
+
     
     self.selectPartyLabel.textColor = [UIColor getLightTryazonColor];
+    self.signUpButton.tintColor = [UIColor getDarkTryazonColor];
     
 }
 
@@ -48,14 +52,8 @@
     [TAPartyController sharedInstance].currentParty =
     [[[TAPartyController sharedInstance] getParties] objectAtIndex:indexPath.row];
     
-//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//    UITabBarController *tabBarController = [storyboard instantiateViewControllerWithIdentifier:@"tabBarController"];
-//    
-//    [self.navigationController pushViewController:tabBarController animated:YES];
     
     [self performSegueWithIdentifier:@"openTabBar" sender:self];
-    
-    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -65,9 +63,6 @@
     TAParty *party = [[[TAPartyController sharedInstance] getParties] objectAtIndex:indexPath.row];
     cell.textLabel.text = party.partyName;
     cell.textLabel.textColor = [UIColor getBrownTryazonColor];
-    if (!party) {
-        cell.textLabel.text = @"(Parties will only show if internet connection available)";
-    }
     
     return cell;
 }
@@ -77,9 +72,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+
 //- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    if ([[segue identifier] isEqualToString:@"showTabBarController"]) {
-//        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+//    if ([[segue identifier] isEqualToString:@"signUpWeb"]) {
+//       // NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
 //        //NSDate *object = self.objects[indexPath.row];
 //        [[segue destinationViewController] setDetailItem:object];
 //    }

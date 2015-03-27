@@ -23,6 +23,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     activityIndicator.hidden = YES;
+    [activityIndicator setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray];
+    [activityIndicator setHidesWhenStopped:YES];
 
     if ([TAPartyController sharedInstance].currentParty) {
         self.party = [TAPartyController sharedInstance].currentParty;
@@ -40,6 +42,10 @@
             NSURL *url = [NSURL URLWithString:_party.partySurveyURL];
             NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
             [self.viewSurvey loadRequest:requestObj];
+            
+            [activityIndicator stopAnimating];
+            
+            //[self.viewSurvey addSubview:activityIndicator];
         }
     }
 }

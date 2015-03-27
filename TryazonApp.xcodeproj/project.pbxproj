@@ -22,6 +22,7 @@
 		6BAB84A21AAB99A700ED3218 /* TAPDFView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BAB84A11AAB99A700ED3218 /* TAPDFView.m */; };
 		6BBCDAE31A8FCDB6001A8753 /* TASurveyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BBCDAE21A8FCDB6001A8753 /* TASurveyViewController.m */; };
 		6BC17FD31AC4D19D009E1C30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BC17FD21AC4D19D009E1C30 /* Main.storyboard */; };
+		6BC17FD61AC4F7D2009E1C30 /* TASignUpWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BC17FD51AC4F7D2009E1C30 /* TASignUpWebViewController.m */; };
 		6BC185881A942F8C00EADC9D /* SurveyDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BC185871A942F8C00EADC9D /* SurveyDetailViewController.m */; };
 		6BC185C21A9592A400EADC9D /* TAPartyInfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BC185C11A9592A400EADC9D /* TAPartyInfoTableViewController.m */; };
 		6BC32F4B1AB9061800C242BB /* TAPartyPlanningChecklistTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BC32F4A1AB9061800C242BB /* TAPartyPlanningChecklistTableViewController.m */; };
@@ -75,6 +76,8 @@
 		6BBCDAE11A8FCDB6001A8753 /* TASurveyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TASurveyViewController.h; sourceTree = "<group>"; };
 		6BBCDAE21A8FCDB6001A8753 /* TASurveyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TASurveyViewController.m; sourceTree = "<group>"; };
 		6BC17FD21AC4D19D009E1C30 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../../../.Trash/Main.storyboard; sourceTree = "<group>"; };
+		6BC17FD41AC4F7D2009E1C30 /* TASignUpWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TASignUpWebViewController.h; sourceTree = "<group>"; };
+		6BC17FD51AC4F7D2009E1C30 /* TASignUpWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TASignUpWebViewController.m; sourceTree = "<group>"; };
 		6BC185861A942F8C00EADC9D /* SurveyDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SurveyDetailViewController.h; sourceTree = "<group>"; };
 		6BC185871A942F8C00EADC9D /* SurveyDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SurveyDetailViewController.m; sourceTree = "<group>"; };
 		6BC185C01A9592A400EADC9D /* TAPartyInfoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAPartyInfoTableViewController.h; sourceTree = "<group>"; };
@@ -153,8 +156,8 @@
 				6BC17FD21AC4D19D009E1C30 /* Main.storyboard */,
 				6BC552BC1A9909F300BB2FA4 /* TATitlePageViewController.h */,
 				6BC552BD1A9909F300BB2FA4 /* TATitlePageViewController.m */,
-				6BC185C01A9592A400EADC9D /* TAPartyInfoTableViewController.h */,
-				6BC185C11A9592A400EADC9D /* TAPartyInfoTableViewController.m */,
+				6BC17FD41AC4F7D2009E1C30 /* TASignUpWebViewController.h */,
+				6BC17FD51AC4F7D2009E1C30 /* TASignUpWebViewController.m */,
 				6BC32F491AB9061800C242BB /* TAPartyPlanningChecklistTableViewController.h */,
 				6BC32F4A1AB9061800C242BB /* TAPartyPlanningChecklistTableViewController.m */,
 				6BAB849A1AA69C1A00ED3218 /* TAPartyHostInfoViewController.h */,
@@ -178,6 +181,8 @@
 				6BAB84951AA2550800ED3218 /* Tryazon-logo-blank.png */,
 				6BC32F4C1AB9084D00C242BB /* TALoginPresenter.h */,
 				6BC32F4D1AB9084D00C242BB /* TALoginPresenter.m */,
+				6BC185C01A9592A400EADC9D /* TAPartyInfoTableViewController.h */,
+				6BC185C11A9592A400EADC9D /* TAPartyInfoTableViewController.m */,
 				6BC552BF1A990DED00BB2FA4 /* TAUserController.h */,
 				6BC552C01A990DED00BB2FA4 /* TAUserController.m */,
 				6BAB84A01AAB99A700ED3218 /* TAPDFView.h */,
@@ -404,6 +409,7 @@
 				6BC32F571ABD2C6300C242BB /* TAChecklist.m in Sources */,
 				6B748A221A8DAC54003F5124 /* AppDelegate.m in Sources */,
 				6BC185C21A9592A400EADC9D /* TAPartyInfoTableViewController.m in Sources */,
+				6BC17FD61AC4F7D2009E1C30 /* TASignUpWebViewController.m in Sources */,
 				6BC552C11A990DED00BB2FA4 /* TAUserController.m in Sources */,
 				6BC32F511ABD28EB00C242BB /* TANetworkController.m in Sources */,
 				6B748A1F1A8DAC54003F5124 /* main.m in Sources */,

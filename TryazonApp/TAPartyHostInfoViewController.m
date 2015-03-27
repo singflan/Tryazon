@@ -38,6 +38,8 @@
         loadingIndicator.hidden = YES;
         self.webViewForPDF.delegate = self;
         self.currentParty = [TAPartyController sharedInstance].currentParty;
+        [loadingIndicator setHidesWhenStopped:YES];
+        [loadingIndicator setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray];
         
         if (!self.currentParty.pdfFile) {
             _failedToLoadLabel.text = @"This party has no PDF available at this time";
@@ -48,10 +50,10 @@
     
             [[TANetworkController sharedInstance] getPDFForCurrentParty:self.currentParty.pdfFile Callback:^(NSData *pdfData) {
                 self.failedToLoadLabel.text = @"";
-                [loadingIndicator setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray];
-                [loadingIndicator setHidesWhenStopped:YES];
+                
+                [loadingIndicator stopAnimating];
             
-                [self.webViewForPDF addSubview:loadingIndicator];
+              //  [self.webViewForPDF addSubview:loadingIndicator];
             
                 [self.webViewForPDF loadData:pdfData MIMEType:@"application/pdf" textEncodingName:nil baseURL:nil];
             //self.webViewForPDF.setBuiltInZoomControls(true);
