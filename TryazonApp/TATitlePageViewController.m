@@ -46,11 +46,16 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     [TAPartyController sharedInstance].currentParty =
-        [[[TAPartyController sharedInstance] getParties] objectAtIndex:indexPath.row];
+    [[[TAPartyController sharedInstance] getParties] objectAtIndex:indexPath.row];
     
-    UITabBarController *tabBarController = [[UITabBarController alloc] init];
+//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//    UITabBarController *tabBarController = [storyboard instantiateViewControllerWithIdentifier:@"tabBarController"];
+//    
+//    [self.navigationController pushViewController:tabBarController animated:YES];
     
-    [self.navigationController pushViewController:tabBarController animated:YES];
+    [self performSegueWithIdentifier:@"openTabBar" sender:self];
+    
+    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

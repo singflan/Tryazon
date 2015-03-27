@@ -35,28 +35,30 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     if ([TAPartyController sharedInstance].currentParty) {
+        loadingIndicator.hidden = YES;
+        self.webViewForPDF.delegate = self;
         self.currentParty = [TAPartyController sharedInstance].currentParty;
         
-        self.webViewForPDF.delegate = self;
-    
-        [[TANetworkController sharedInstance] getPDFForCurrentParty:self.currentParty.pdfFile Callback:^(NSData *pdfData) {
-            [loadingIndicator setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray];
-            [loadingIndicator setHidesWhenStopped:YES];
-            [self.webViewForPDF addSubview:loadingIndicator];
+        if (!self.currentParty.pdfFile) {
+            _failedToLoadLabel.text = @"This party has no PDF available at this time";
             
-            [self.webViewForPDF loadData:pdfData MIMEType:@"application/pdf" textEncodingName:nil baseURL:nil];
+        } else{
+            loadingIndicator.hidden = NO;
+            [loadingIndicator startAnimating];
+    
+            [[TANetworkController sharedInstance] getPDFForCurrentParty:self.currentParty.pdfFile Callback:^(NSData *pdfData) {
+                self.failedToLoadLabel.text = @"";
+                [loadingIndicator setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray];
+                [loadingIndicator setHidesWhenStopped:YES];
+            
+                [self.webViewForPDF addSubview:loadingIndicator];
+            
+                [self.webViewForPDF loadData:pdfData MIMEType:@"application/pdf" textEncodingName:nil baseURL:nil];
             //self.webViewForPDF.setBuiltInZoomControls(true);
-            self.webViewForPDF.scalesPageToFit = YES;
-            [self.view addSubview:self.webViewForPDF];
-        
-        }];
-        // Add & format the loading indicator
-        
-        
-    }
-    else {
-        _failedToLoadLabel.text = @"No party has been selected, please select the party you are hosting on the first tab: Select a Party";
-        // UIImageView or UILabel directing to tab 1
+                self.webViewForPDF.scalesPageToFit = YES;
+                [self.view addSubview:self.webViewForPDF];
+            }];
+        }
     }
 }
 

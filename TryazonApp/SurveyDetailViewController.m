@@ -22,25 +22,27 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    activityIndicator.hidden = YES;
+
     if ([TAPartyController sharedInstance].currentParty) {
         self.party = [TAPartyController sharedInstance].currentParty;
     // Do any additional setup after loading the view.
         self.viewSurvey.delegate = self;
+        self.failedToLoadLabel.text = @"";
     
-        //TAParty *party = [TAPartyController sharedInstance].currentParty;
-   // self.surveyURL = ;
-        NSURL *url = [NSURL URLWithString:_party.partySurveyURL];
-        NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-        [self.viewSurvey loadRequest:requestObj];
+        if (!self.party.partySurveyURL) {
+            _failedToLoadLabel.text = @"This party has no survey available at this time";
+            
+        } else{
+            activityIndicator.hidden = NO;
+            [activityIndicator startAnimating];
+        
+            NSURL *url = [NSURL URLWithString:_party.partySurveyURL];
+            NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
+            [self.viewSurvey loadRequest:requestObj];
+        }
     }
-    else {
-        _failedToLoadLabel.text = @"No party has been selected, please select the party you are hosting on the first tab: Select a Party";
-    }
-    
 }
-
-
-//add a way to add photos from device
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

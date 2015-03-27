@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		6B748A1F1A8DAC54003F5124 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B748A1E1A8DAC54003F5124 /* main.m */; };
 		6B748A221A8DAC54003F5124 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B748A211A8DAC54003F5124 /* AppDelegate.m */; };
-		6B748A281A8DAC54003F5124 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B748A261A8DAC54003F5124 /* Main.storyboard */; };
 		6B748A2A1A8DAC54003F5124 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B748A291A8DAC54003F5124 /* Images.xcassets */; };
 		6B748A2D1A8DAC54003F5124 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B748A2B1A8DAC54003F5124 /* LaunchScreen.xib */; };
 		6B748A391A8DAC54003F5124 /* TryazonAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B748A381A8DAC54003F5124 /* TryazonAppTests.m */; };
@@ -22,6 +21,7 @@
 		6BAB849F1AA6B87000ED3218 /* TAPartyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BAB849E1AA6B87000ED3218 /* TAPartyController.m */; };
 		6BAB84A21AAB99A700ED3218 /* TAPDFView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BAB84A11AAB99A700ED3218 /* TAPDFView.m */; };
 		6BBCDAE31A8FCDB6001A8753 /* TASurveyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BBCDAE21A8FCDB6001A8753 /* TASurveyViewController.m */; };
+		6BC17FD31AC4D19D009E1C30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BC17FD21AC4D19D009E1C30 /* Main.storyboard */; };
 		6BC185881A942F8C00EADC9D /* SurveyDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BC185871A942F8C00EADC9D /* SurveyDetailViewController.m */; };
 		6BC185C21A9592A400EADC9D /* TAPartyInfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BC185C11A9592A400EADC9D /* TAPartyInfoTableViewController.m */; };
 		6BC32F4B1AB9061800C242BB /* TAPartyPlanningChecklistTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BC32F4A1AB9061800C242BB /* TAPartyPlanningChecklistTableViewController.m */; };
@@ -54,7 +54,6 @@
 		6B748A1E1A8DAC54003F5124 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6B748A201A8DAC54003F5124 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6B748A211A8DAC54003F5124 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		6B748A271A8DAC54003F5124 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6B748A291A8DAC54003F5124 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6B748A2C1A8DAC54003F5124 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		6B748A321A8DAC54003F5124 /* TryazonAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TryazonAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +74,7 @@
 		6BAB84A11AAB99A700ED3218 /* TAPDFView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAPDFView.m; sourceTree = "<group>"; };
 		6BBCDAE11A8FCDB6001A8753 /* TASurveyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TASurveyViewController.h; sourceTree = "<group>"; };
 		6BBCDAE21A8FCDB6001A8753 /* TASurveyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TASurveyViewController.m; sourceTree = "<group>"; };
+		6BC17FD21AC4D19D009E1C30 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../../../.Trash/Main.storyboard; sourceTree = "<group>"; };
 		6BC185861A942F8C00EADC9D /* SurveyDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SurveyDetailViewController.h; sourceTree = "<group>"; };
 		6BC185871A942F8C00EADC9D /* SurveyDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SurveyDetailViewController.m; sourceTree = "<group>"; };
 		6BC185C01A9592A400EADC9D /* TAPartyInfoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAPartyInfoTableViewController.h; sourceTree = "<group>"; };
@@ -150,7 +150,7 @@
 			children = (
 				6B748A201A8DAC54003F5124 /* AppDelegate.h */,
 				6B748A211A8DAC54003F5124 /* AppDelegate.m */,
-				6B748A261A8DAC54003F5124 /* Main.storyboard */,
+				6BC17FD21AC4D19D009E1C30 /* Main.storyboard */,
 				6BC552BC1A9909F300BB2FA4 /* TATitlePageViewController.h */,
 				6BC552BD1A9909F300BB2FA4 /* TATitlePageViewController.m */,
 				6BC185C01A9592A400EADC9D /* TAPartyInfoTableViewController.h */,
@@ -326,9 +326,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BAB84941AA254F000ED3218 /* Tryazon-logo.png in Resources */,
-				6B748A281A8DAC54003F5124 /* Main.storyboard in Resources */,
 				6B748A431A8DACB6003F5124 /* Tryazon-logo2a.png in Resources */,
 				6B748A2D1A8DAC54003F5124 /* LaunchScreen.xib in Resources */,
+				6BC17FD31AC4D19D009E1C30 /* Main.storyboard in Resources */,
 				6B748A2A1A8DAC54003F5124 /* Images.xcassets in Resources */,
 				6BAB84961AA2550800ED3218 /* Tryazon-logo-blank.png in Resources */,
 			);
@@ -435,14 +435,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		6B748A261A8DAC54003F5124 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6B748A271A8DAC54003F5124 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		6B748A2B1A8DAC54003F5124 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
