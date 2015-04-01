@@ -11,31 +11,27 @@
 #import "TAParty.h"
 #import "TAPartyController.h"
 #import "TANetworkController.h"
+#import "TATableViewCell.h"
+#import "UIColor+ExtraColorTools.h"
 
 @interface TAPartyPlanningChecklistTableViewController ()
 @property TAParty *currentParty;
 @property (strong, nonatomic) TAChecklist *checklist;
 @property (strong, nonatomic) UIButton *checkButton;
 @property BOOL *checkBoxSelected;
+@property (nonatomic, strong) TATableViewCell *prototypeCell;
 
 @end
 
 @implementation TAPartyPlanningChecklistTableViewController
+static NSString *TACellIdentifier = @"TATableCell1";
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didChangePreferredContentSize:) name:UIContentSizeCategoryDidChangeNotification object:nil];
     
-//    PFQuery *query = [PFQuery queryWithClassName:@"Checklist"];
-//    [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
-//        self.checklistSection1 = object[@"prePartyPlanning"];
-//        self.checklistSection2 = object[@"weekOfParty"];
-//        self.checklistSection3 = object[@"dayOfParty"];
-//        self.checklistSection4 = object[@"afterParty"];
-//    
-//        [self.tableView reloadData];
-//    }];
-    
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
+    [self.tableView registerClass:[TATableViewCell class] forCellReuseIdentifier:TACellIdentifier];
     
     [self.tableView setEditing:YES];
     self.tableView.allowsSelectionDuringEditing = YES;
@@ -49,6 +45,9 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
+    self.navigationItem.title = @"Party Prep Checklist";
+    
+    
     
 }
 
@@ -57,10 +56,16 @@
     [[TANetworkController sharedInstance] getChecklistForCurrentParty:self.currentParty.checklistPointerID Callback:^(TAChecklist * checklist) {
         
         self.checklist = checklist;
+    
         
         [self.tableView reloadData];
     }];
     
+}
+
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return UITableViewAutomaticDimension;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -98,7 +103,9 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+   // UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:TACellIdentifier forIndexPath:indexPath];
     
     switch (indexPath.section) {
         case 0:
@@ -116,18 +123,130 @@
         default:
             break;
     }
+    cell.textLabel.numberOfLines = 0;
+    cell.textLabel.font = [UIFont fontWithName:@"AvenirNext" size:13.5];
     
-  //  self.checkButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 12, 20, 20)];
-  //  [self.checkButton addTarget:self action:@selector(toggleButton:) forControlEvents:UIControlEventTouchUpInside];
-    
-    
+//    [self configureCell:cell forRowAtIndexPath:indexPath];
+    [cell.contentView sizeToFit];
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    
+- (void)configureCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([cell isKindOfClass:[TATableViewCell class]])
+    {
+        TATableViewCell *textCell = (TATableViewCell *)cell;
+        //textCell.checklistItemLabel.text = [NSString stringWithFormat:@"Line %ld",(long)indexPath.row+1];
+        //textCell.checklistItemLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleCaption1];
+        //textCell.backgroundColor = [UIColor getDarkTryazonColor];
+        //textCell.checklistItemLabel.text = [self.sourceData objectAtIndex:indexPath.row];
+        
+        textCell.checklistItemLabel.numberOfLines=0;
+        textCell.checklistItemLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        textCell.checklistItemLabel.sizeToFit;
+        
+        //textCell.checklistItemLabel.autoresizingMask = UIViewAutoresizingFlexibleHeight;
+        //[textCell.checklistItemLabel sizeToFit];
+        
+        
+//        switch (indexPath.section) {
+//            case 0:
+//                textCell.checklistItemLabel.text = [self.checklist.prePartyPlanning objectAtIndex:indexPath.row];
+//                break;
+//            case 1:
+//                textCell.checklistItemLabel.text = [self.checklist.weekOfParty objectAtIndex:indexPath.row];
+//                break;
+//            case 2:
+//                textCell.checklistItemLabel.text = [self.checklist.dayOfParty objectAtIndex:indexPath.row];
+//                break;
+//            case 3:
+//                textCell.checklistItemLabel.text = [self.checklist.afterParty objectAtIndex:indexPath.row];
+//                break;
+//            default:
+//                textCell.checklistItemLabel.text = [self.checklist.prePartyPlanning objectAtIndex:indexPath.row];
+//                break;
+//        }
+        //textCell.checklistItemLabel.text = [self.checklist.prePartyPlanning objectAtIndex:indexPath.row];
+
+        textCell.checklistItemLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
+        
+    }
 }
+
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//   [self configureCell:self.prototypeCell forRowAtIndexPath:indexPath];
+//    [self.prototypeCell layoutIfNeeded];
+//    
+//    CGSize size = [self.prototypeCell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+//    return size.height+1;
+//   // return 200;
+//}
+
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return UITableViewAutomaticDimension;
+}
+
+-(void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {
+    UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
+                                           
+    header.contentView.backgroundColor = [UIColor getLightTryazonColor];
+    header.textLabel.numberOfLines = 0;
+    header.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    //header.textLabel.sizeToFit;
+}
+//
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    CGFloat result;
+//    TATableViewCell *textCell = [[TATableViewCell alloc]init];
+//    switch (indexPath.section) {
+//                        case 0:
+//                            textCell.checklistItemLabel.text = [self.checklist.prePartyPlanning objectAtIndex:indexPath.row];
+//                            break;
+//                        case 1:
+//                            textCell.checklistItemLabel.text = [self.checklist.weekOfParty objectAtIndex:indexPath.row];
+//                            break;
+//                        case 2:
+//                            textCell.checklistItemLabel.text  = [self.checklist.dayOfParty objectAtIndex:indexPath.row];
+//                            break;
+//                        case 3:
+//                            textCell.checklistItemLabel.text  = [self.checklist.afterParty objectAtIndex:indexPath.row];
+//                            break;
+//                        default:
+//                            break;
+//                    }
+//    [textCell layoutIfNeeded];
+//
+//    CGSize size = [self.prototypeCell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+//    return size.height+1;
+//   // return result;
+//}
+
+- (TATableViewCell *)prototypeCell
+{
+    if (!_prototypeCell)
+    {
+        _prototypeCell = [self.tableView dequeueReusableCellWithIdentifier:TACellIdentifier];
+    }
+    return _prototypeCell;
+}
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+//    
+//    // Create a dictionary with a key that is the
+//    //party & unique Parse objectID
+//    // completedItems:[indexPath, indexPath
+//    NSDictionary *selectedItems = [[NSMutableDictionary alloc] init];
+//    [selectedItems setValue:self.currentParty forKey:@"party"];
+//    [selectedItems setValue:[NSArray arrayWithObjects:[NSIndexPath ] forKey:@"completedItems"];
+//    
+//    
+//}
+//
+//- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+//    NSDictionary *selectedItems = [[NSMutableDictionary alloc] initWithDictionary:<#(NSDictionary *)#>//??
+//    [selectedItems]
+//}
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
@@ -149,35 +268,21 @@
     }
 }
 
-
-
-//- (void)toggleButton: (id) sender
-//{
-//    UIButton *tappedButton = (UIButton*)sender;
-//    
-//    NSLog(@"%d",tappedButton.tag);
-//    if([tappedButton.currentImage isEqual:[UIImage imageNamed:@"checkbox.png"]])
-//    {
-//        [sender  setImage:[UIImage imageNamed: @"checkbox-checked.png"] forState:UIControlStateNormal];
-//    }
-//    else
-//    {
-//        [sender  setImage:[UIImage imageNamed: @"checkbox.png"] forState:UIControlStateNormal];
-//        
-//    }
-//
-//}
-
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return UITableViewCellAccessoryCheckmark;
     //return UITableViewCellEditingStyleNone;
 }
-//diabled, normal, highlighted
-//selected UIButton selectedcheck....
-//can set image for different control states....
 
+- (void)dealloc
+{
+    //[[NSNotificationCenter defaultCenter] removeObserver:self name:UIContentSizeCategoryDidChangeNotification object:nil];
+}
 
+- (void)didChangePreferredContentSize:(NSNotification *)notification
+{
+   // [self.tableView reloadData];
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

@@ -7,7 +7,6 @@
 //
 
 #import "TAPartyHostInfoViewController.h"
-#import "TAPDFView.h"
 #import "TAPartyController.h"
 #import "TANetworkController.h"
 
@@ -40,6 +39,7 @@
         self.currentParty = [TAPartyController sharedInstance].currentParty;
         [loadingIndicator setHidesWhenStopped:YES];
         [loadingIndicator setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray];
+        self.failedToLoadLabel.text = @"";
         
         if (!self.currentParty.pdfFile) {
             _failedToLoadLabel.text = @"This party has no PDF available at this time";

@@ -19,6 +19,7 @@
 @property (strong, nonatomic) NSString *checklistPointerID;
 @property (strong, nonatomic) TAChecklist *checklist;
 @property (strong, nonatomic) PFFile *pdfFile;
+@property (strong, nonatomic) NSArray* checkedItemsArray;
 
 - (id)initWithPFObject:(PFObject *)object;
 

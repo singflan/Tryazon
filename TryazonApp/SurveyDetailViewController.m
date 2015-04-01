@@ -22,13 +22,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    activityIndicator.hidden = YES;
+    
     [activityIndicator setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray];
     [activityIndicator setHidesWhenStopped:YES];
+    [self.viewSurvey addSubview:activityIndicator];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                          action:@selector(dismissKeyboard)];
+    tap.cancelsTouchesInView = NO;
+    [self.view addGestureRecognizer:tap];
+   // [tap release];
+    
+    [self.view addGestureRecognizer:tap];
 
-    if ([TAPartyController sharedInstance].currentParty) {
+   if ([TAPartyController sharedInstance].currentParty) {
         self.party = [TAPartyController sharedInstance].currentParty;
-    // Do any additional setup after loading the view.
         self.viewSurvey.delegate = self;
         self.failedToLoadLabel.text = @"";
     
@@ -36,16 +44,16 @@
             _failedToLoadLabel.text = @"This party has no survey available at this time";
             
         } else{
-            activityIndicator.hidden = NO;
+           
             [activityIndicator startAnimating];
         
-            NSURL *url = [NSURL URLWithString:_party.partySurveyURL];
+            NSURL *url = [NSURL URLWithString:self.party.partySurveyURL];
             NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
             [self.viewSurvey loadRequest:requestObj];
             
             [activityIndicator stopAnimating];
             
-            //[self.viewSurvey addSubview:activityIndicator];
+            //self.viewSurvey.dismissFirstResponder;
         }
     }
 }

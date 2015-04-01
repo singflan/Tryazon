@@ -11,6 +11,7 @@
 #import "TAPartyController.h"
 #import "UIColor+ExtraColorTools.h"
 #import "TAPartyPlanningChecklistTableViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface TATitlePageViewController() <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UILabel *selectPartyLabel;
@@ -27,6 +28,7 @@
     self.partyTableView.delegate = self;
     self.partyTableView.dataSource = self;
     
+    
     [self.partyTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
     //[self.partyTableView registerClass:nil forHeaderFooterViewReuseIdentifier:@"PartyHeader"];
    // self.partyTableView
@@ -35,9 +37,25 @@
         [self.partyTableView reloadData];
     }];
 
+    self.view.backgroundColor = [UIColor whiteColor];
     
-    self.selectPartyLabel.textColor = [UIColor getLightTryazonColor];
+    
+    self.selectPartyLabel.textColor = [UIColor getDarkTryazonColor];
+    self.selectPartyLabel.font = [UIFont fontWithName:@"AvenirNext-Bold" size:16];
+
+    
+    // Button design
     self.signUpButton.tintColor = [UIColor getDarkTryazonColor];
+    self.signUpButton.backgroundColor = [UIColor whiteColor];
+    self.signUpButton.layer.cornerRadius = 9;
+    self.signUpButton.clipsToBounds = YES;
+    
+    // Table view design
+    self.partyTableView.layer.borderWidth = 2;
+    self.partyTableView.layer.borderColor = [UIColor getLightTryazonColor].CGColor;
+    self.partyTableView.backgroundView = nil;
+    self.partyTableView.backgroundColor = [UIColor getLightTryazonColor];
+    self.partyTableView.bounces = NO;
     
 }
 
@@ -63,6 +81,8 @@
     TAParty *party = [[[TAPartyController sharedInstance] getParties] objectAtIndex:indexPath.row];
     cell.textLabel.text = party.partyName;
     cell.textLabel.textColor = [UIColor getBrownTryazonColor];
+    cell.textLabel.font = [UIFont fontWithName:@"AvenirNext" size:13.5];
+
     
     return cell;
 }

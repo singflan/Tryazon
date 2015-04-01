@@ -7,21 +7,26 @@
 //
 
 #import "TASurveyViewController.h"
-#import "TALoginPresenter.h"
 #import "TALogInViewController.h"
 #import <Parse/Parse.h>
+#import "UIColor+ExtraColorTools.h"
 
 @interface TASurveyViewController ()
-
-
+@property (weak, nonatomic) IBOutlet UIButton *takeSurveyButton;
 
 @end
 
 @implementation TASurveyViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.takeSurveyButton.backgroundColor = [UIColor getLightTryazonColor];
+    self.takeSurveyButton.tintColor = [UIColor whiteColor];
+    self.navigationItem.title = @"Post-party Survey";
+
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,10 +38,10 @@
    // [TALoginPresenter logInNeeded:self];
 }
 
-- (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user{
-    [logInController dismissViewControllerAnimated:YES completion:^{
-    }];
-}
+//- (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user{
+//    [logInController dismissViewControllerAnimated:YES completion:^{
+//    }];
+//}
 /*
 #pragma mark - Navigation
 

@@ -24,4 +24,12 @@
     return self;
 }
 
+//-(void)saveCheckedItems {
+//    NSDictionary *
+//}
+
+- (void)loadCheckedItems {
+    
+    
+}
 @end
