@@ -63,4 +63,9 @@
     }];
 }
 
+//- (void)getImageForCurrentParty:(PFFile *)image Callback:(void (^)(NSData *))callback {
+//    [image getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+//        callback (data);
+//    }];
+//}
 @end

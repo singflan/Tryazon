@@ -144,6 +144,7 @@ static NSString *TACellIdentifier = @"TATableCell1";
         textCell.checklistItemLabel.numberOfLines=0;
         textCell.checklistItemLabel.lineBreakMode = NSLineBreakByWordWrapping;
         textCell.checklistItemLabel.sizeToFit;
+        textCell.checklistItemLabel.font = [UIFont fontWithName:@"AvenirNext" size:13.5];
         
         //textCell.checklistItemLabel.autoresizingMask = UIViewAutoresizingFlexibleHeight;
         //[textCell.checklistItemLabel sizeToFit];
@@ -193,6 +194,9 @@ static NSString *TACellIdentifier = @"TATableCell1";
     header.contentView.backgroundColor = [UIColor getLightTryazonColor];
     header.textLabel.numberOfLines = 0;
     header.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    header.textLabel.textColor = [UIColor whiteColor];
+    header.textLabel.font = [UIFont fontWithName:@"AvenirNext" size:13.5];
+    
     //header.textLabel.sizeToFit;
 }
 //

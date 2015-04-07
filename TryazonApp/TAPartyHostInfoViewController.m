@@ -13,7 +13,7 @@
 @interface TAPartyHostInfoViewController ()
 @property (nonatomic, strong) TAParty *currentParty;
 //@property (nonatomic, strong) PFFile *partyPDF;
-@property (nonatomic, strong) NSData *partyPDFData;
+//@property (nonatomic, strong) NSData *partyPDFData;
 @property (strong, nonatomic) IBOutlet UIWebView *webViewForPDF;
 @property (weak, nonatomic) IBOutlet UILabel *failedToLoadLabel;
 

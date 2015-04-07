@@ -15,10 +15,12 @@
 @property (strong, nonatomic) NSString *partyName;
 @property (strong, nonatomic) NSString *companyName;
 @property (strong, nonatomic) NSString *partySurveyURL;
+@property (strong, nonatomic) NSString *companyDescription;
 @property (strong) NSDate * partyDate;
 @property (strong, nonatomic) NSString *checklistPointerID;
 @property (strong, nonatomic) TAChecklist *checklist;
 @property (strong, nonatomic) PFFile *pdfFile;
+@property (strong, nonatomic) PFFile *mainImageFile;
 @property (strong, nonatomic) NSArray* checkedItemsArray;
 
 - (id)initWithPFObject:(PFObject *)object;

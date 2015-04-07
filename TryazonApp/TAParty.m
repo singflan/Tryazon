@@ -14,10 +14,12 @@
     self.partyName = object[@"partyName"];
     self.companyName = object[@"companyName1"];
     self.partySurveyURL = object[@"surveyurl"];
+    self.companyDescription = object[@"companyDescription1"];
     self.partyDate = object[@"partydate"];
     PFObject *checklistPointer = object[@"checklistArrays"];
     self.checklistPointerID = checklistPointer.objectId;
     self.pdfFile = object[@"partypdf"];
+    self.mainImageFile = object[@"mainimage"];
     
     NSLog(@"%@", self.checklistPointerID);
     

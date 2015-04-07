@@ -43,6 +43,13 @@
     tabBarItem2.title = @"Checklist";
     tabBarItem3.title = @"Hosting Info";
     tabBarItem4.title = @"Survey";
+    
+//    [self.tabBar setTitleTextAttributes: forState: [NSDictionary dictionaryWithObjectsAndKeys:
+//                                             [UIFont fontWithName:@"AmericanTypewriter" size:20.0f], UITextAttributeFont,
+//                                             [UIColor blackColor], UITextAttributeTextColor,
+//                                             [UIColor grayColor], UITextAttributeTextShadowColor,
+//                                             [NSValue valueWithUIOffset:UIOffsetMake(0.0f, 1.0f)], UITextAttributeTextShadowOffset,
+//                                             nil]];
 
     
 //    [tabBarItem1 setFinishedSelectedImage:[UIImage imageNamed:@"home_selected.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"home.png"]];
