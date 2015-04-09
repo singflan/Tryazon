@@ -80,11 +80,15 @@
     
     TAParty *party = [[[TAPartyController sharedInstance] getParties] objectAtIndex:indexPath.row];
     cell.textLabel.text = party.partyName;
-    cell.textLabel.textColor = [UIColor getBrownTryazonColor];
-    cell.textLabel.font = [UIFont fontWithName:@"AvenirNext" size:13.5];
 
-    
+
+
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    cell.textLabel.textColor = [UIColor getBrownTryazonColor];
+    cell.textLabel.font = [UIFont fontWithName:@"AvenirNext-DemiBold" size:16];
 }
 
 - (void)didReceiveMemoryWarning {

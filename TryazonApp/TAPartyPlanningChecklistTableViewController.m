@@ -18,8 +18,9 @@
 @property TAParty *currentParty;
 @property (strong, nonatomic) TAChecklist *checklist;
 @property (strong, nonatomic) UIButton *checkButton;
+@property (strong, nonatomic) UILabel *checklistItemLabel;
 @property BOOL *checkBoxSelected;
-@property (nonatomic, strong) TATableViewCell *prototypeCell;
+//@property (nonatomic, strong) TATableViewCell *prototypeCell;
 
 @end
 
@@ -31,7 +32,9 @@ static NSString *TACellIdentifier = @"TATableCell1";
     [super viewDidLoad];
     //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didChangePreferredContentSize:) name:UIContentSizeCategoryDidChangeNotification object:nil];
     
-    [self.tableView registerClass:[TATableViewCell class] forCellReuseIdentifier:TACellIdentifier];
+  //  [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:TACellIdentifier];
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
+
     
     [self.tableView setEditing:YES];
     self.tableView.allowsSelectionDuringEditing = YES;
@@ -103,9 +106,9 @@ static NSString *TACellIdentifier = @"TATableCell1";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-   // UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:TACellIdentifier forIndexPath:indexPath];
+    //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:TACellIdentifier forIndexPath:indexPath];
     
     switch (indexPath.section) {
         case 0:
@@ -124,27 +127,36 @@ static NSString *TACellIdentifier = @"TATableCell1";
             break;
     }
     cell.textLabel.numberOfLines = 0;
-    cell.textLabel.font = [UIFont fontWithName:@"AvenirNext" size:13.5];
+   
+
+
     
-//    [self configureCell:cell forRowAtIndexPath:indexPath];
+    //[self configureCell:cell forRowAtIndexPath:indexPath];
     [cell.contentView sizeToFit];
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    cell.textLabel.font= [UIFont fontWithName:@"AvenirNext-Medium" size:13.5];
+    cell.textLabel.textColor = [UIColor getDarkTryazonColor];
+
+
+}
+
 - (void)configureCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ([cell isKindOfClass:[TATableViewCell class]])
-    {
-        TATableViewCell *textCell = (TATableViewCell *)cell;
+//    if ([cell isKindOfClass:[TATableViewCell class]])
+//    {
+        //UITableViewCell *textCell = (UITableViewCell *)cell;
         //textCell.checklistItemLabel.text = [NSString stringWithFormat:@"Line %ld",(long)indexPath.row+1];
         //textCell.checklistItemLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleCaption1];
         //textCell.backgroundColor = [UIColor getDarkTryazonColor];
         //textCell.checklistItemLabel.text = [self.sourceData objectAtIndex:indexPath.row];
         
-        textCell.checklistItemLabel.numberOfLines=0;
-        textCell.checklistItemLabel.lineBreakMode = NSLineBreakByWordWrapping;
-        textCell.checklistItemLabel.sizeToFit;
-        textCell.checklistItemLabel.font = [UIFont fontWithName:@"AvenirNext" size:13.5];
+        self.checklistItemLabel.numberOfLines=0;
+        self.checklistItemLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        //textCell.checklistItemLabel.sizeToFit;
+        self.checklistItemLabel.font = [UIFont fontWithName:@"AvenirNext" size:12];
         
         //textCell.checklistItemLabel.autoresizingMask = UIViewAutoresizingFlexibleHeight;
         //[textCell.checklistItemLabel sizeToFit];
@@ -169,9 +181,9 @@ static NSString *TACellIdentifier = @"TATableCell1";
 //        }
         //textCell.checklistItemLabel.text = [self.checklist.prePartyPlanning objectAtIndex:indexPath.row];
 
-        textCell.checklistItemLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
+        //self.checklistItemLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
         
-    }
+    //}
 }
 
 //- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -195,7 +207,7 @@ static NSString *TACellIdentifier = @"TATableCell1";
     header.textLabel.numberOfLines = 0;
     header.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
     header.textLabel.textColor = [UIColor whiteColor];
-    header.textLabel.font = [UIFont fontWithName:@"AvenirNext" size:13.5];
+    header.textLabel.font = [UIFont fontWithName:@"AvenirNext-Medium" size:14];
     
     //header.textLabel.sizeToFit;
 }
@@ -227,14 +239,15 @@ static NSString *TACellIdentifier = @"TATableCell1";
 //   // return result;
 //}
 
-- (TATableViewCell *)prototypeCell
-{
-    if (!_prototypeCell)
-    {
-        _prototypeCell = [self.tableView dequeueReusableCellWithIdentifier:TACellIdentifier];
-    }
-    return _prototypeCell;
-}
+//- (TATableViewCell *)prototypeCell
+//{
+//    if (!_prototypeCell)
+//    {
+//        _prototypeCell = [self.tableView dequeueReusableCellWithIdentifier:TACellIdentifier];
+//    }
+//    return _prototypeCell;
+//}
+
 //- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 //    
 //    // Create a dictionary with a key that is the
