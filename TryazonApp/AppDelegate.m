@@ -51,6 +51,7 @@
 //                                             [NSValue valueWithUIOffset:UIOffsetMake(0.0f, 1.0f)], UITextAttributeTextShadowOffset,
 //                                             nil]];
 
+    tabBar.backgroundColor = [UIColor getLightTryazonColor];
     
 //    [tabBarItem1 setFinishedSelectedImage:[UIImage imageNamed:@"home_selected.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"home.png"]];
 //    [tabBarItem2 setFinishedSelectedImage:[UIImage imageNamed:@"maps_selected.png"] withFinishedUnselectedImage:[UIImage imageNamed:@"maps.png"]];
@@ -86,11 +87,6 @@
 //                                                                             categories:nil];
 //    [application registerUserNotificationSettings:settings];
 //    [application registerForRemoteNotifications];
-    
-
-    
-        // [self performSegueWithIdentifier:@"logInSegue" sender:self];
-    
     return YES;
 }
 

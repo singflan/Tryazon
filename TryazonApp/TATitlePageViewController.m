@@ -45,9 +45,10 @@
 
     
     // Button design
-    self.signUpButton.tintColor = [UIColor getDarkTryazonColor];
-    self.signUpButton.backgroundColor = [UIColor whiteColor];
-    self.signUpButton.layer.cornerRadius = 9;
+    self.signUpButton.tintColor = [UIColor whiteColor];
+    self.signUpButton.backgroundColor = [UIColor getLightTryazonColor];
+    
+    //self.signUpButton.layer.cornerRadius = 9;
     self.signUpButton.clipsToBounds = YES;
     
     // Table view design
@@ -61,33 +62,47 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return [[TAPartyController sharedInstance] getParties].count;
+    return [[[TAPartyController sharedInstance] getParties] count]+1;
 }
 
 // Setting party based on row clicked on on title page
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    [TAPartyController sharedInstance].currentParty =
-    [[[TAPartyController sharedInstance] getParties] objectAtIndex:indexPath.row];
-    
-    
-    [self performSegueWithIdentifier:@"openTabBar" sender:self];
+    NSUInteger row = [indexPath row];
+    if (row == [[[TAPartyController sharedInstance] getParties] count]) {
+        [self performSegueWithIdentifier:@"signUpSegue" sender:self];
+    }else {
+        [TAPartyController sharedInstance].currentParty =
+        [[[TAPartyController sharedInstance] getParties] objectAtIndex:indexPath.row];
+
+        [self performSegueWithIdentifier:@"openTabBar" sender:self];
+
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
-    TAParty *party = [[[TAPartyController sharedInstance] getParties] objectAtIndex:indexPath.row];
-    cell.textLabel.text = party.partyName;
-
-
+    NSUInteger row = [indexPath row];
+    if (row == [[[TAPartyController sharedInstance] getParties] count]) {
+        cell.textLabel.text = @"New to Tryazon? Sign up now!";
+        
+    } else {
+        TAParty *party = [[[TAPartyController sharedInstance] getParties] objectAtIndex:indexPath.row];
+        cell.textLabel.text = party.partyName;
+    }
 
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    cell.textLabel.textColor = [UIColor getBrownTryazonColor];
+    NSUInteger row = [indexPath row];
+    if (row == [[[TAPartyController sharedInstance] getParties] count]) {
+        cell.textLabel.textColor = [UIColor getDarkTryazonColor];
+    } else {
+        cell.textLabel.textColor = [UIColor getBrownTryazonColor];
+    }
     cell.textLabel.font = [UIFont fontWithName:@"AvenirNext-DemiBold" size:16];
 }
 

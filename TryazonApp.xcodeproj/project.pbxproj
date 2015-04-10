@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B1C5DF01AD7337B00B13440 /* Tryazon120x120.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6B1C5DEF1AD7337B00B13440 /* Tryazon120x120.jpg */; };
 		6B261C651AD34760003F593B /* TAPartyDescriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B261C641AD34760003F593B /* TAPartyDescriptionViewController.m */; };
 		6B748A1F1A8DAC54003F5124 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B748A1E1A8DAC54003F5124 /* main.m */; };
 		6B748A221A8DAC54003F5124 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B748A211A8DAC54003F5124 /* AppDelegate.m */; };
@@ -52,6 +53,7 @@
 /* Begin PBXFileReference section */
 		03E5E70203255536E6DD5076 /* Pods-TryazonApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TryazonApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-TryazonApp/Pods-TryazonApp.release.xcconfig"; sourceTree = "<group>"; };
 		3C7D92C43B1DC949FCF7BA26 /* Pods-TryazonApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TryazonApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TryazonApp/Pods-TryazonApp.debug.xcconfig"; sourceTree = "<group>"; };
+		6B1C5DEF1AD7337B00B13440 /* Tryazon120x120.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Tryazon120x120.jpg; path = ../../../Desktop/Tryazon120x120.jpg; sourceTree = "<group>"; };
 		6B261C631AD34760003F593B /* TAPartyDescriptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAPartyDescriptionViewController.h; sourceTree = "<group>"; };
 		6B261C641AD34760003F593B /* TAPartyDescriptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAPartyDescriptionViewController.m; sourceTree = "<group>"; };
 		6B748A191A8DAC54003F5124 /* TryazonApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TryazonApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,10 +163,10 @@
 				6BC17FD21AC4D19D009E1C30 /* Main.storyboard */,
 				6BC552BC1A9909F300BB2FA4 /* TATitlePageViewController.h */,
 				6BC552BD1A9909F300BB2FA4 /* TATitlePageViewController.m */,
-				6B261C631AD34760003F593B /* TAPartyDescriptionViewController.h */,
-				6B261C641AD34760003F593B /* TAPartyDescriptionViewController.m */,
 				6BC17FD41AC4F7D2009E1C30 /* TASignUpWebViewController.h */,
 				6BC17FD51AC4F7D2009E1C30 /* TASignUpWebViewController.m */,
+				6B261C631AD34760003F593B /* TAPartyDescriptionViewController.h */,
+				6B261C641AD34760003F593B /* TAPartyDescriptionViewController.m */,
 				6BC32F491AB9061800C242BB /* TAPartyPlanningChecklistTableViewController.h */,
 				6BC32F4A1AB9061800C242BB /* TAPartyPlanningChecklistTableViewController.m */,
 				6BEE9DAE1ACB31AB004FF4BA /* TATableViewCell.h */,
@@ -176,6 +178,7 @@
 				6BC185861A942F8C00EADC9D /* SurveyDetailViewController.h */,
 				6BC185871A942F8C00EADC9D /* SurveyDetailViewController.m */,
 				6BAB849D1AA6B87000ED3218 /* TAPartyController.h */,
+				6B1C5DEF1AD7337B00B13440 /* Tryazon120x120.jpg */,
 				6BAB849E1AA6B87000ED3218 /* TAPartyController.m */,
 				6BC32F521ABD2B0100C242BB /* TAParty.h */,
 				6BC32F531ABD2B0100C242BB /* TAParty.m */,
@@ -344,6 +347,7 @@
 				6B748A2D1A8DAC54003F5124 /* LaunchScreen.xib in Resources */,
 				6BC17FD31AC4D19D009E1C30 /* Main.storyboard in Resources */,
 				6B748A2A1A8DAC54003F5124 /* Images.xcassets in Resources */,
+				6B1C5DF01AD7337B00B13440 /* Tryazon120x120.jpg in Resources */,
 				6BAB84961AA2550800ED3218 /* Tryazon-logo-blank.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -544,7 +548,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3C7D92C43B1DC949FCF7BA26 /* Pods-TryazonApp.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-6";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Dustin Flanary (95H7J54Y36)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Dustin Flanary (95H7J54Y36)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -563,7 +568,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 03E5E70203255536E6DD5076 /* Pods-TryazonApp.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-6";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Dustin Flanary (95H7J54Y36)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Dustin Flanary (95H7J54Y36)";
 				FRAMEWORK_SEARCH_PATHS = (

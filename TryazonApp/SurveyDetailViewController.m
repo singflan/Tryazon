@@ -28,11 +28,10 @@
     [self.viewSurvey addSubview:activityIndicator];
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self
-                                                                          action:@selector(dismissKeyboard)];
+                                                                action:@selector(dismissKeyboard)];
     tap.cancelsTouchesInView = NO;
     [self.view addGestureRecognizer:tap];
    // [tap release];
-    
     [self.view addGestureRecognizer:tap];
 
    if ([TAPartyController sharedInstance].currentParty) {

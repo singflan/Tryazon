@@ -38,6 +38,8 @@ static NSString *TACellIdentifier = @"TATableCell1";
     
     [self.tableView setEditing:YES];
     self.tableView.allowsSelectionDuringEditing = YES;
+    
+    self.tableView.backgroundColor = [UIColor getLightTryazonColor];
     //[self.tableView]
     
     // Uncomment the following line to preserve selection between presentations.
@@ -128,73 +130,16 @@ static NSString *TACellIdentifier = @"TATableCell1";
     }
     cell.textLabel.numberOfLines = 0;
    
-
-
-    
-    //[self configureCell:cell forRowAtIndexPath:indexPath];
     [cell.contentView sizeToFit];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    cell.textLabel.font= [UIFont fontWithName:@"AvenirNext-Medium" size:13.5];
-    cell.textLabel.textColor = [UIColor getDarkTryazonColor];
+    cell.textLabel.font= [UIFont fontWithName:@"AvenirNext-Medium" size:14];
+    cell.textLabel.textColor = [UIColor getBrownTryazonColor];
 
 
 }
-
-- (void)configureCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-//    if ([cell isKindOfClass:[TATableViewCell class]])
-//    {
-        //UITableViewCell *textCell = (UITableViewCell *)cell;
-        //textCell.checklistItemLabel.text = [NSString stringWithFormat:@"Line %ld",(long)indexPath.row+1];
-        //textCell.checklistItemLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleCaption1];
-        //textCell.backgroundColor = [UIColor getDarkTryazonColor];
-        //textCell.checklistItemLabel.text = [self.sourceData objectAtIndex:indexPath.row];
-        
-        self.checklistItemLabel.numberOfLines=0;
-        self.checklistItemLabel.lineBreakMode = NSLineBreakByWordWrapping;
-        //textCell.checklistItemLabel.sizeToFit;
-        self.checklistItemLabel.font = [UIFont fontWithName:@"AvenirNext" size:12];
-        
-        //textCell.checklistItemLabel.autoresizingMask = UIViewAutoresizingFlexibleHeight;
-        //[textCell.checklistItemLabel sizeToFit];
-        
-        
-//        switch (indexPath.section) {
-//            case 0:
-//                textCell.checklistItemLabel.text = [self.checklist.prePartyPlanning objectAtIndex:indexPath.row];
-//                break;
-//            case 1:
-//                textCell.checklistItemLabel.text = [self.checklist.weekOfParty objectAtIndex:indexPath.row];
-//                break;
-//            case 2:
-//                textCell.checklistItemLabel.text = [self.checklist.dayOfParty objectAtIndex:indexPath.row];
-//                break;
-//            case 3:
-//                textCell.checklistItemLabel.text = [self.checklist.afterParty objectAtIndex:indexPath.row];
-//                break;
-//            default:
-//                textCell.checklistItemLabel.text = [self.checklist.prePartyPlanning objectAtIndex:indexPath.row];
-//                break;
-//        }
-        //textCell.checklistItemLabel.text = [self.checklist.prePartyPlanning objectAtIndex:indexPath.row];
-
-        //self.checklistItemLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
-        
-    //}
-}
-
-//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//   [self configureCell:self.prototypeCell forRowAtIndexPath:indexPath];
-//    [self.prototypeCell layoutIfNeeded];
-//    
-//    CGSize size = [self.prototypeCell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
-//    return size.height+1;
-//   // return 200;
-//}
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return UITableViewAutomaticDimension;
@@ -207,46 +152,11 @@ static NSString *TACellIdentifier = @"TATableCell1";
     header.textLabel.numberOfLines = 0;
     header.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
     header.textLabel.textColor = [UIColor whiteColor];
-    header.textLabel.font = [UIFont fontWithName:@"AvenirNext-Medium" size:14];
+    header.textLabel.font = [UIFont fontWithName:@"AvenirNext-Medium" size:14.5];
     
     //header.textLabel.sizeToFit;
 }
-//
-//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    CGFloat result;
-//    TATableViewCell *textCell = [[TATableViewCell alloc]init];
-//    switch (indexPath.section) {
-//                        case 0:
-//                            textCell.checklistItemLabel.text = [self.checklist.prePartyPlanning objectAtIndex:indexPath.row];
-//                            break;
-//                        case 1:
-//                            textCell.checklistItemLabel.text = [self.checklist.weekOfParty objectAtIndex:indexPath.row];
-//                            break;
-//                        case 2:
-//                            textCell.checklistItemLabel.text  = [self.checklist.dayOfParty objectAtIndex:indexPath.row];
-//                            break;
-//                        case 3:
-//                            textCell.checklistItemLabel.text  = [self.checklist.afterParty objectAtIndex:indexPath.row];
-//                            break;
-//                        default:
-//                            break;
-//                    }
-//    [textCell layoutIfNeeded];
-//
-//    CGSize size = [self.prototypeCell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
-//    return size.height+1;
-//   // return result;
-//}
 
-//- (TATableViewCell *)prototypeCell
-//{
-//    if (!_prototypeCell)
-//    {
-//        _prototypeCell = [self.tableView dequeueReusableCellWithIdentifier:TACellIdentifier];
-//    }
-//    return _prototypeCell;
-//}
 
 //- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 //    
